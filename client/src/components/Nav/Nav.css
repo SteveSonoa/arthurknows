@@ -1,14 +1,24 @@
 .menuItem {
-/*			max-height: 50px;*/
-	transition: width .25s, height .25s;
+	transition: font-size .25s;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	font-size: 2em;
 }
 .menuItem:hover {
-	width: 75px;
-	transition: width .1s, height .1s;
+	font-size: 4em;
+	transition: font-size .1s;
 }
 #transition-hover-content {
-	text-align: left;
+	text-align: center;
 	margin-left: 3.5%;
+	font-size: .5em;
+}
+#transition-hover {
+	padding-left: 19.5px;
+	padding-right: 19.5px;
+	padding-top: 19.5px;
 }
 @media screen and (min-width: 768px) {
 	#transition-hover-content {
@@ -19,6 +29,9 @@
 		-ms-transition:.2s;
 		transition:.2s;
 		text-align: center;
+	}
+	.navbar-brand {
+		height: 150px;
 	}
 }
 @media screen and (max-width: 767px) {
@@ -32,6 +45,7 @@
 }	
 .transition-hover:hover #transition-hover-content {
 	opacity:1;
+	font-size: 1em;
 }
 .navbar {
 	background-color: #ffffff;
