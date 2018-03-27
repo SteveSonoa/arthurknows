@@ -24,31 +24,31 @@ const Nav = () => (
         <li className="transition-hover"><i className="far fa-calendar-alt menuItem"></i>
           <p id="transition-hover-content">This Week</p>
         </li>
-        <li className="transition-hover"><i class="fas fa-users menuItem"></i>
+        <li className="transition-hover"><i className="fas fa-users menuItem"></i>
           <p id="transition-hover-content">Search</p>
         </li>
-        <li className="transition-hover"><i class="fas fa-user menuItem"></i>
+        <li className="transition-hover"><i className="fas fa-user menuItem"></i>
           <p id="transition-hover-content">My Profile</p>
         </li>
-        <li className="transition-hover"><i class="fas fa-cogs menuItem"></i>
+        <li className="transition-hover"><i className="fas fa-cogs menuItem"></i>
           <p id="transition-hover-content">Settings</p>
         </li>
-        <li className="transition-hover"><i class="fas fa-dollar-sign menuItem"></i>
+        <li className="transition-hover"><i className="fas fa-dollar-sign menuItem"></i>
           <p id="transition-hover-content">Billing</p>
         </li>
-        <li className="transition-hover"><i class="fas fa-question menuItem"></i>
+        <li className="transition-hover"><i className="fas fa-question menuItem"></i>
           <p id="transition-hover-content">FAQ</p>
         </li>
-        <li className="transition-hover"><i class="far fa-life-ring menuItem"></i>
+        <li className="transition-hover"><i className="far fa-life-ring menuItem"></i>
           <p id="transition-hover-content">Support</p>
         </li>
-        <li className="transition-hover"><i class="far fa-comments menuItem"></i>
+        <li className="transition-hover"><i className="far fa-comments menuItem"></i>
           <p id="transition-hover-content">Contact Us</p>
         </li>
-        <li className="transition-hover"><i class="fas fa-user-secret menuItem"></i>
+        <li className="transition-hover"><i className="fas fa-user-secret menuItem"></i>
           <p id="transition-hover-content">About Us</p>
         </li>
-        <li className="transition-hover"><i class="fas fa-lock menuItem"></i>
+        <li className="transition-hover"><i className="fas fa-lock menuItem"></i>
           <p id="transition-hover-content">Log Out</p>
         </li>
       </ul>
