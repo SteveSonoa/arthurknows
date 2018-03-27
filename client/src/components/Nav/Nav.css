@@ -5,6 +5,7 @@
 	padding-top: 10px;
 	padding-bottom: 5px;
 	font-size: 2em;
+	text-align: center;
 }
 .menuItem:hover {
 	font-size: 4em;
