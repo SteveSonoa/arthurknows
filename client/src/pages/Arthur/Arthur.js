@@ -57,8 +57,8 @@ class Arthur extends Component {
   render() {
     return (
       <Col size="md-4 sm-12">
-        <img src="./img/logo.png" class="img img-responsive" />
-        <h1>This is Arthur's text area. Things he says will go here.</h1>
+        <img src="./img/logo.png" className="img img-responsive" />
+        <h1 className="arthurH1">This is Arthur's text area. Things he says will go here.</h1>
       </Col>
     );
   }

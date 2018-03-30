@@ -10,6 +10,9 @@ import { Col, Row, Container } from "./components/Grid";
 const App = () => (
 	<Router>
 		<div>
+			<video autoPlay muted loop id="myVideo">
+				<source src="./img/header.mp4" type="video/mp4" />
+			</video>
 			<Nav />
 			<Container>				
 				<Row>
