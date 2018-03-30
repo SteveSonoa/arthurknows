@@ -57,8 +57,16 @@ class Arthur extends Component {
   render() {
     return (
       <Col size="md-4 sm-12">
-        <img src="./img/logo.png" className="img img-responsive" />
-        <h1 className="arthurH1">This is Arthur's text area. Things he says will go here.</h1>
+        <Container fluid>
+          <Row>
+            <Col size="md-12 sm-3 xs-3">
+              <img src="./img/logo.png" id="arthurImg" className="img img-responsive" />
+            </Col>
+            <Col size="md-12 sm-9 xs-9">
+              <h1 className="arthurH1">This is Arthur's text area. Things he says will go here.</h1>
+            </Col>
+          </Row>
+        </Container>
       </Col>
     );
   }

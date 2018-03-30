@@ -19,37 +19,37 @@ const Nav = () => (
 
       <ul className="nav navbar-nav navbar-right">
         <li className="navTransition-hover"><i className="far fa-calendar-minus navMenuItem navi"></i>
-          <p id="navTransition-hover-content" class="navp">Today</p>
+          <p id="navTransition-hover-content" className="navp">Today</p>
         </li>
         <li className="navTransition-hover"><i className="far fa-calendar-alt navMenuItem navi"></i>
-          <p id="navTransition-hover-content" class="navp">This Week</p>
+          <p id="navTransition-hover-content" className="navp">This Week</p>
         </li>
         <li className="navTransition-hover"><i className="fas fa-users navMenuItem navi"></i>
-          <p id="navTransition-hover-content" class="navp">Search</p>
+          <p id="navTransition-hover-content" className="navp">Search</p>
         </li>
         <li className="navTransition-hover"><i className="fas fa-user navMenuItem navi"></i>
-          <p id="navTransition-hover-content" class="navp">My Profile</p>
+          <p id="navTransition-hover-content" className="navp">My Profile</p>
         </li>
         <li className="navTransition-hover"><i className="fas fa-cogs navMenuItem navi"></i>
-          <p id="navTransition-hover-content" class="navp">Settings</p>
+          <p id="navTransition-hover-content" className="navp">Settings</p>
         </li>
         <li className="navTransition-hover"><i className="fas fa-dollar-sign navMenuItem navi"></i>
-          <p id="navTransition-hover-content" class="navp">Billing</p>
+          <p id="navTransition-hover-content" className="navp">Billing</p>
         </li>
         <li className="navTransition-hover"><i className="fas fa-question navMenuItem navi"></i>
-          <p id="navTransition-hover-content" class="navp">FAQ</p>
+          <p id="navTransition-hover-content" className="navp">FAQ</p>
         </li>
         <li className="navTransition-hover"><i className="far fa-life-ring navMenuItem navi"></i>
-          <p id="navTransition-hover-content" class="navp">Support</p>
+          <p id="navTransition-hover-content" className="navp">Support</p>
         </li>
         <li className="navTransition-hover"><i className="far fa-comments navMenuItem navi"></i>
-          <p id="navTransition-hover-content" class="navp">Contact Us</p>
+          <p id="navTransition-hover-content" className="navp">Contact Us</p>
         </li>
         <li className="navTransition-hover"><i className="fas fa-user-secret navMenuItem navi"></i>
-          <p id="navTransition-hover-content" class="navp">About Us</p>
+          <p id="navTransition-hover-content" className="navp">About Us</p>
         </li>
         <li className="navTransition-hover"><i className="fas fa-lock navMenuItem navi"></i>
-          <p id="navTransition-hover-content" class="navp">Log Out</p>
+          <p id="navTransition-hover-content" className="navp">Log Out</p>
         </li>
       </ul>
     </div>
