@@ -11,45 +11,45 @@ const Nav = () => (
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>
       </button>
-      <a className="navbar-brand" href="#">Logo</a>
+      <a id="navbar-hover" className="navbar-brand" href="#">Logo</a>
     </div>
 
     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 
       <ul className="nav navbar-nav navbar-right">
-        <li className="transition-hover"><i className="far fa-calendar-minus menuItem"></i>
-          <p id="transition-hover-content">Today</p>
+        <li className="navTransition-hover"><i className="far fa-calendar-minus navMenuItem navi"></i>
+          <p id="navTransition-hover-content" class="navp">Today</p>
         </li>
-        <li className="transition-hover"><i className="far fa-calendar-alt menuItem"></i>
-          <p id="transition-hover-content">This Week</p>
+        <li className="navTransition-hover"><i className="far fa-calendar-alt navMenuItem navi"></i>
+          <p id="navTransition-hover-content" class="navp">This Week</p>
         </li>
-        <li className="transition-hover"><i className="fas fa-users menuItem"></i>
-          <p id="transition-hover-content">Search</p>
+        <li className="navTransition-hover"><i className="fas fa-users navMenuItem navi"></i>
+          <p id="navTransition-hover-content" class="navp">Search</p>
         </li>
-        <li className="transition-hover"><i className="fas fa-user menuItem"></i>
-          <p id="transition-hover-content">My Profile</p>
+        <li className="navTransition-hover"><i className="fas fa-user navMenuItem navi"></i>
+          <p id="navTransition-hover-content" class="navp">My Profile</p>
         </li>
-        <li className="transition-hover"><i className="fas fa-cogs menuItem"></i>
-          <p id="transition-hover-content">Settings</p>
+        <li className="navTransition-hover"><i className="fas fa-cogs navMenuItem navi"></i>
+          <p id="navTransition-hover-content" class="navp">Settings</p>
         </li>
-        <li className="transition-hover"><i className="fas fa-dollar-sign menuItem"></i>
-          <p id="transition-hover-content">Billing</p>
+        <li className="navTransition-hover"><i className="fas fa-dollar-sign navMenuItem navi"></i>
+          <p id="navTransition-hover-content" class="navp">Billing</p>
         </li>
-        <li className="transition-hover"><i className="fas fa-question menuItem"></i>
-          <p id="transition-hover-content">FAQ</p>
+        <li className="navTransition-hover"><i className="fas fa-question navMenuItem navi"></i>
+          <p id="navTransition-hover-content" class="navp">FAQ</p>
         </li>
-        <li className="transition-hover"><i className="far fa-life-ring menuItem"></i>
-          <p id="transition-hover-content">Support</p>
+        <li className="navTransition-hover"><i className="far fa-life-ring navMenuItem navi"></i>
+          <p id="navTransition-hover-content" class="navp">Support</p>
         </li>
-        <li className="transition-hover"><i className="far fa-comments menuItem"></i>
-          <p id="transition-hover-content">Contact Us</p>
+        <li className="navTransition-hover"><i className="far fa-comments navMenuItem navi"></i>
+          <p id="navTransition-hover-content" class="navp">Contact Us</p>
         </li>
-        <li className="transition-hover"><i className="fas fa-user-secret menuItem"></i>
-          <p id="transition-hover-content">About Us</p>
+        <li className="navTransition-hover"><i className="fas fa-user-secret navMenuItem navi"></i>
+          <p id="navTransition-hover-content" class="navp">About Us</p>
         </li>
-        <li className="transition-hover"><i className="fas fa-lock menuItem"></i>
-          <p id="transition-hover-content">Log Out</p>
+        <li className="navTransition-hover"><i className="fas fa-lock navMenuItem navi"></i>
+          <p id="navTransition-hover-content" class="navp">Log Out</p>
         </li>
       </ul>
     </div>

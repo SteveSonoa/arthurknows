@@ -1,4 +1,4 @@
-.menuItem {
+.navMenuItem {
 	transition: font-size .25s;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -7,22 +7,22 @@
 	font-size: 1.5em;
 	text-align: center;
 }
-.menuItem:hover {
+.navMenuItem:hover {
 	font-size: 4em;
 	transition: font-size .1s;
 }
-#transition-hover-content {
+#navTransition-hover-content {
 	text-align: center;
 	margin-left: 3.5%;
 	font-size: .5em;
 }
-#transition-hover {
+#navTransition-hover {
 	padding-left: 19.5px;
 	padding-right: 19.5px;
 	padding-top: 19.5px;
 }
 @media screen and (min-width: 768px) {
-	#transition-hover-content {
+	#navTransition-hover-content {
 		opacity:0;
 		-webkit-transition:.2s;
 		-moz-transition:.2s;
@@ -34,21 +34,33 @@
 	.navbar-brand {
 		height: 150px;
 	}
+	.navbar {
+		background-color: transparent;
+		border: 0;
+	}
+	.navi, .navp {
+		color: #efefef;
+	}
 }
 @media screen and (max-width: 767px) {
-	.menuItem {
+	.navMenuItem {
 		float: left;
 		padding-right: 5px;
 	}
-	.transition-hover {
+	.navTransition-hover {
 		padding-bottom: 5px;
 	}
+	.navbar {
+		background-color: #ffffff;
+		border: 0;
+	}
+
 }	
-.transition-hover:hover #transition-hover-content {
+.navTransition-hover:hover #navTransition-hover-content {
 	opacity:1;
 	font-size: 1em;
 }
-.navbar {
-	background-color: #ffffff;
-	border: 0;
+
+#navbar-hover:hover {
+	background-color: transparent;
 }
