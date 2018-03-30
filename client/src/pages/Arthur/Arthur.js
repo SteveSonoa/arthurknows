@@ -7,7 +7,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
-class Books extends Component {
+class Arthur extends Component {
   state = {
     books: [],
     title: "",
@@ -55,7 +55,7 @@ class Books extends Component {
 
   render() {
     return (
-      <Col size="md-8 sm-12">
+      <Col size="md-4 sm-12">
         <Jumbotron>
           <h1>What Books Should I Read?</h1>
         </Jumbotron>
@@ -90,4 +90,4 @@ class Books extends Component {
   }
 }
 
-export default Books;
+export default Arthur;
