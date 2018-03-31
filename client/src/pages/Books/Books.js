@@ -58,9 +58,7 @@ class Books extends Component {
     return (
       <Col size="md-8 sm-12">
         <Panel>
-          <h1>What Books Should I Read?</h1>
-        </Panel>
-        <Panel>
+          <h1>This Week's Meetings</h1>
           <form>
             <Input
               value={this.state.title}
