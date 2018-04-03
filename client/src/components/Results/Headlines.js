@@ -6,9 +6,12 @@ export const Headlines = props => (
 		<Container fluid>
 			<Row>
 				<Col size="lg-12 md-12 sm-12 xs-12">
-					<a href={props.link} target=_blank><h1>{props.headline}</h1>
-					<p>{props.date}</p>
-					<p>{props.blurb}</p></a>
+					<h1>Company Headlines</h1>
+					{props.story.map(story => (
+						<a href={story.link} key={story.link}><h2>{story.headline}</h2>
+						<p>{story.date}</p>
+						<p>{story.blurb}</p></a>
+					))}
 				</Col>
 			</Row>
 		</Container>

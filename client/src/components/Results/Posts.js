@@ -6,7 +6,10 @@ export const Posts = props => (
 		<Container fluid>
 			<Row>
 				<Col size="lg-12 md-12 sm-12 xs-12">
-					<p>{props.text}</p>
+					<h1>{props.header}</h1>
+					{props.post.map(post => (
+						<p key={post.text}>{post.text}</p>
+					))}
 				</Col>
 			</Row>
 		</Container>

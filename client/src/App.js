@@ -4,6 +4,7 @@ import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Arthur from "./pages/Arthur";
+import Results from "./pages/Results";
 import Nav from "./components/Nav";
 import { Col, Row, Container } from "./components/Grid";
 
@@ -16,13 +17,17 @@ const App = () => (
 			<Nav />
 			<Container>				
 				<Row>
-					<Arthur />
-					<Switch>
-						<Route exact path="/" component={Books} />
-						<Route exact path="/books" component={Books} />
-						<Route exact path="/books/:id" component={Detail} />
-						<Route component={NoMatch} />
-					</Switch>
+					<Col size="md-4 sm-12">
+						<Arthur />
+					</Col>
+					<Col size="md-8 sm-12">
+						<Switch>
+							<Route exact path="/" component={Results} />
+							<Route exact path="/books" component={Books} />
+							<Route exact path="/books/:id" component={Detail} />
+							<Route component={NoMatch} />
+						</Switch>
+					</Col>
 				</Row>
 			</Container>
 		</div>

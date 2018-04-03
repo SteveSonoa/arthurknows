@@ -6,9 +6,10 @@ export const Shared = props => (
 		<Container fluid>
 			<Row>
 				<Col size="lg-12 md-12 sm-12 xs-12">
+					<h1>Your Shared Connections</h1>
 					<p>
 						{props.shared.map(shared => (
-							<a href={shared.url} target=_blank key={shared.url}>{shared.name}</a> 
+							<a href={shared.url} key={shared.url}>{shared.name}</a> 
 						))}
 					</p>
 				</Col>
