@@ -1,12 +1,13 @@
 import React from "react";
 import Panel from "../../components/Panel";
 import { Col, Row, Container } from "../../components/Grid";
-import { Personal, Headlines, Posts, Shared } from "../../components/Results";
+import { Personal, Headlines, Posts, Shared, Twitter } from "../../components/Results";
 import headlinesData from "../../components/Results/data/headlines.json";
 import linkedinData from "../../components/Results/data/linkedin.json";
 import postsCompanyData from "../../components/Results/data/postsCompany.json";
 import postsPersonData from "../../components/Results/data/postsPerson.json";
 import sharedData from "../../components/Results/data/shared.json";
+import twitterData from "../../components/Results/data/twitter.json";
 
 const Results = props => (
 		<Panel>
@@ -29,11 +30,17 @@ const Results = props => (
 						<Shared
 							shared={sharedData}
 						/>
-					</Col>
+						<div className="hDivider"></div>
+					</Col>						
 				</Row>
 				<Row>
-					<Col size="lg-12 md-12 sm-12 xs-12">
-						<div className="hDivider"></div>
+					<Col size="lg-5 md-5 sm-12 xs-12">
+						<Twitter
+							header="Latest Tweets"
+							id={twitterData}
+						/>
+					</Col>
+					<Col size="lg-7 md-7 sm-12 xs-12">
 						<Headlines
 							story={headlinesData}
 						/>
