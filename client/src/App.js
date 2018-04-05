@@ -26,7 +26,7 @@ const App = () => (
 						<Switch>
 							<Route exact path="/" component={Login} />
 							<Route exact path="/results" component={Results} />
-							<Route exact path="/weekly" component={Weekly} />
+							<Route exact path="/weekly" component={Results} />
 							<Route component={NoMatch} />
 						</Switch>
 					</Col>
