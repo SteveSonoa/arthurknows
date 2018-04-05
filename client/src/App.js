@@ -5,8 +5,10 @@ import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Arthur from "./pages/Arthur";
 import Results from "./pages/Results";
+import Login from "./pages/Login";
 import Nav from "./components/Nav";
 import { Col, Row, Container } from "./components/Grid";
+
 
 const App = () => (
 	<Router>
@@ -22,9 +24,9 @@ const App = () => (
 					</Col>
 					<Col size="md-8 sm-12">
 						<Switch>
-							<Route exact path="/" component={Results} />
-							<Route exact path="/books" component={Books} />
-							<Route exact path="/books/:id" component={Detail} />
+							<Route exact path="/" component={Login} />
+							<Route exact path="/results" component={Results} />
+							<Route exact path="/weekly" component={Weekly} />
 							<Route component={NoMatch} />
 						</Switch>
 					</Col>
