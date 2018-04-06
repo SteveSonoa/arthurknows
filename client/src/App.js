@@ -26,7 +26,14 @@ const App = () => (
 						<Switch>
 							<Route exact path="/" component={Login} />
 							<Route exact path="/results" component={Results} />
-							<Route exact path="/weekly" component={Results} />
+							<Route exact path="/search/weekly" component={Results} />
+							<Route exact path="/search/daily" component={Results} />
+							<Route exact path="/search/custom" component={Results} />
+							<Route exact path="/results/:id" component={Results} />
+							<Route exact path="/profile" component={Results} />
+							<Route exact path="/about" component={Results} />
+							<Route exact path="/contact" component={Results} />
+							<Route exact path="/settings" component={Results} />
 							<Route component={NoMatch} />
 						</Switch>
 					</Col>
