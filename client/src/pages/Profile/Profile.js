@@ -14,16 +14,16 @@ const Profile = props => (
 						<form className="form-horizontal">
 						  <div className="form-group col-xs-9 col-sm-9 col-md-9 col-lg-9">
 						    <label for="myName">My Name</label>
-						    <input type="text" className="form-control" id="myName" defaultValue={profileData.fullName} placeholder="Your Name" />
+						    <input type="text" className="form-control" id="myName" defaultValue={props.profileData.fullName} placeholder="Your Name" />
 						  </div>
 						  <div className="form-group col-xs-3 col-sm-3 col-md-3 col-lg-3">
 						    <label for="myDob">DoB</label>
-						    <input type="text" className="form-control" id="myDob" defaultValue={profileData.dob} placeholder="MM/DD/YYYY" />
+						    <input type="text" className="form-control" id="myDob" defaultValue={props.profileData.dob} placeholder="MM/DD/YYYY" />
 						  </div>
 
 						  <div className="form-group col-xs-9 col-sm-9 col-md-9 col-lg-9">
 						    <label for="myEail">Email Address</label>
-						    <input type="email" className="form-control" id="myEmail" defaultValue={profileData.email} placeholder="me@example.com" />
+						    <input type="email" className="form-control" id="myEmail" defaultValue={props.profileData.email} placeholder="me@example.com" />
 						  </div>
 						  <div className="form-group col-xs-3 col-sm-3 col-md-3 col-lg-3">
 						    <label for="myGender">Gender</label>
@@ -37,7 +37,7 @@ const Profile = props => (
 
 					      <label for="myLinkedIn" className="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">www.linkedin.com/in/</label>
 					      <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-					        <input type="text" className="form-control" id="myLinkedIn" defaultValue={profileData.linkedin} />
+					        <input type="text" className="form-control" id="myLinkedIn" defaultValue={props.profileData.linkedin} />
 					      </div>
 
 					      <div>

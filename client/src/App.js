@@ -11,6 +11,8 @@ import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import { Col, Row, Container } from "./components/Grid";
 
+import profileData from "./pages/Profile/profileData.json";
+
 class App extends Component { 
 
 	state = {
@@ -40,7 +42,9 @@ class App extends Component {
 									<Route exact path="/search/daily" component={Results} />
 									<Route exact path="/search/custom" component={Results} />
 									<Route exact path="/results/:id" component={Results} />
-									<Route exact path="/profile" component={Profile} />
+									<Route exact path="/profile" render = { () => 
+										<Profile profileData={profileData}/>
+									} />
 									<Route exact path="/about" component={Results} />
 									<Route exact path="/contact" component={Results} />
 									<Route exact path="/settings" component={Settings} />

@@ -24,17 +24,16 @@ const Profile = props => (
 			</Row>
 			<Row>
 				<Col size="lg-12 md-12 sm-12 xs-12">
-					<form>
-						<p>Arthur's Sarcasm Level</p>
-				        <center><ReactBootstrapSlider
-						    value={2}
-						    slideStop={1}
-						    step={1}
-							ticks = {[0, 1, 2]}
-							ticks_labels = {["None", "Sometimes", "Intense"]}
-							ticks_snap_bounds = { 1 }
-							tooltip = "hide" /></center>
-					</form>
+					
+					<p>Arthur's Sarcasm Level</p>
+					<center><ReactBootstrapSlider
+						value={2}
+						slideStop={1}
+						step={1}
+						ticks = {[0, 1, 2]}
+						ticks_labels = {["None", "Sometimes", "Intense"]}
+						ticks_snap_bounds = { 1 }
+						tooltip = "hide" /></center>
 				</Col>
 			</Row>
 			<Row>
