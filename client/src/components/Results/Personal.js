@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "../Grid";
+import { Button, AnchorButton } from "@blueprintjs/core";
 
 export const Personal = props => (
 	<div>
