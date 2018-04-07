@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Nav.css";
+import profileData from "../../pages/Profile/profileData.json";
 
 const Nav = () => (
   <div className="container-fluid">
@@ -21,7 +22,7 @@ const Nav = () => (
         <li className="navTransition-hover"><Link to="/search/custom"><i className="fas fa-users navMenuItem navi"></i>
           <p id="navTransition-hover-content" className="navp">Search</p></Link>
         </li>
-        <li className="navTransition-hover"><Link to="/profile"><i className="fas fa-user navMenuItem navi"></i>
+        <li className="navTransition-hover"><Link to="/profile" profileData={profileData}><i className="fas fa-user navMenuItem navi"></i>
           <p id="navTransition-hover-content" className="navp">My Profile</p></Link>
         </li>
         <li className="navTransition-hover"><Link to="/settings"><i className="fas fa-cogs navMenuItem navi"></i>
