@@ -1,0 +1,53 @@
+import React from "react";
+import Panel from "../../components/Panel";
+import { Col, Row, Container } from "../../components/Grid";
+import "./Settings.css";
+import { Link } from 'react-router-dom';
+import profileData from "../Profile/profileData.json";
+import ReactBootstrapSlider from 'react-bootstrap-slider';
+import BootstrapSlider from 'bootstrap-slider/dist/css/bootstrap-slider.min.css';
+
+const Profile = props => (
+	<Panel>
+		<Container fluid>
+			<Row>
+				<Col size="lg-12 md-12 sm-12 xs-12">
+					<h1>Settings</h1>
+				</Col>
+			</Row>
+			<Row>
+				<Col size="lg-12 md-12 sm-12 xs-12">
+					<p>Link to your Google Calendar</p>
+					<img src="./img/googleCalendar.jpg" className="img img-responsive" />
+					<div className="hDivider center-block"></div>
+				</Col>
+			</Row>
+			<Row>
+				<Col size="lg-12 md-12 sm-12 xs-12">
+					<form>
+						<p>Arthur's Sarcasm Level</p>
+				        <center><ReactBootstrapSlider
+						    value={2}
+						    slideStop={1}
+						    step={1}
+							ticks = {[0, 1, 2]}
+							ticks_labels = {["None", "Sometimes", "Intense"]}
+							ticks_snap_bounds = { 1 }
+							tooltip = "hide" /></center>
+					</form>
+				</Col>
+			</Row>
+			<Row>
+				<Col size="lg-12 md-12 sm-12 xs-12">
+					<button className="btn btn-success center-block">Save Changes</button>
+				</Col>
+			</Row>
+
+
+
+
+		</Container>
+	</Panel>
+);
+
+export default Profile;

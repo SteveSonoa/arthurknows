@@ -8,6 +8,7 @@ import Results from "./pages/Results";
 import Login from "./pages/Login";
 import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
 import { Col, Row, Container } from "./components/Grid";
 
 class App extends Component { 
@@ -42,7 +43,7 @@ class App extends Component {
 									<Route exact path="/profile" component={Profile} />
 									<Route exact path="/about" component={Results} />
 									<Route exact path="/contact" component={Results} />
-									<Route exact path="/settings" component={Results} />
+									<Route exact path="/settings" component={Settings} />
 									<Route component={NoMatch} />
 								</Switch>
 							</Col>

@@ -41,7 +41,7 @@ const Profile = props => (
 					      </div>
 
 					      <div>
-						      <button type="submit" className="btn btn-success col-xs-6 col-sm-6 col-md-6 col-lg-6">Save Changes</button>
+						      <button className="btn btn-success col-xs-6 col-sm-6 col-md-6 col-lg-6">Save Changes</button>
 					      </div>
 					      <div>
 						      <button type="reset" className="btn btn-danger col-xs-6 col-sm-6 col-md-6 col-lg-6">Delete My Profile</button>
