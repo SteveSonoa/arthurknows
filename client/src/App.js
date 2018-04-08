@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
+import About from "./pages/About";
 import { Col, Row, Container } from "./components/Grid";
 
 import profileData from "./pages/Profile/profileData.json";
@@ -45,7 +46,7 @@ class App extends Component {
 									<Route exact path="/profile" render = { () => 
 										<Profile profileData={profileData}/>
 									} />
-									<Route exact path="/about" component={Results} />
+									<Route exact path="/about" component={About} />
 									<Route exact path="/contact" component={Results} />
 									<Route exact path="/settings" component={Settings} />
 									<Route component={NoMatch} />
