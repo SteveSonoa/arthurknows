@@ -27,7 +27,7 @@ class App extends Component {
 			<Router>
 				<div>
 					<video autoPlay muted loop id="myVideo">
-						<source src="./img/test4.mp4" type="video/mp4" />
+						<source src="/img/test4.mp4" type="video/mp4" />
 					</video>
 					<Nav />
 					<Container>				
