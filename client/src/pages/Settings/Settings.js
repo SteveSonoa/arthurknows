@@ -17,15 +17,13 @@ const Profile = props => (
 			</Row>
 			<Row>
 				<Col size="lg-12 md-12 sm-12 xs-12">
-					<p>Link to your Google Calendar</p>
-					<img src="./img/googleCalendar.jpg" className="img img-responsive" />
-					<div className="hDivider center-block"></div>
+					<img src="./img/googleCalendarGray.png" className="img img-responsive" /><br />
 				</Col>
 			</Row>
 			<Row>
 				<Col size="lg-12 md-12 sm-12 xs-12">
 					
-					<p>Arthur's Sarcasm Level</p>
+					<h3>Arthur's Sarcasm Level</h3>
 					<center><ReactBootstrapSlider
 						value={2}
 						slideStop={1}

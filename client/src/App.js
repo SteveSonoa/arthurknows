@@ -10,6 +10,9 @@ import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import About from "./pages/About";
+import Daily from "./pages/Daily";
+import Weekly from "./pages/Weekly";
+import Privacy from "./pages/Privacy";
 import { Col, Row, Container } from "./components/Grid";
 
 import profileData from "./pages/Profile/profileData.json";
@@ -17,9 +20,7 @@ import profileData from "./pages/Profile/profileData.json";
 class App extends Component { 
 
 	state = {
-		"score": 0,
-		"hiscore": 0,
-		"message": "Click A Veggie!"
+
 	};
 
 	render() {
@@ -27,7 +28,7 @@ class App extends Component {
 			<Router>
 				<div>
 					<video autoPlay muted loop id="myVideo">
-						<source src="./img/test4.mp4" type="video/mp4" />
+						<source src="/img/test4.mp4" type="video/mp4" />
 					</video>
 					<Nav />
 					<Container>				
@@ -39,8 +40,8 @@ class App extends Component {
 								<Switch>
 									<Route exact path="/" component={Login} />
 									<Route exact path="/results" component={Results} />
-									<Route exact path="/search/weekly" component={Results} />
-									<Route exact path="/search/daily" component={Results} />
+									<Route exact path="/search/weekly" component={Weekly} />
+									<Route exact path="/search/daily" component={Daily} />
 									<Route exact path="/search/custom" component={Results} />
 									<Route exact path="/results/:id" component={Results} />
 									<Route exact path="/profile" render = { () => 
@@ -49,6 +50,7 @@ class App extends Component {
 									<Route exact path="/about" component={About} />
 									<Route exact path="/contact" component={Results} />
 									<Route exact path="/settings" component={Settings} />
+									<Route exact path="/privacy" component={Privacy} />
 									<Route component={NoMatch} />
 								</Switch>
 							</Col>
