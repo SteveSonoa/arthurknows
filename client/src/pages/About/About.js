@@ -53,6 +53,11 @@ const About = props => (
 						))}
 					</Col>
 				</Row>
+				<Row>
+					<Col size="lg-12 md-12 sm-12 xs-12">
+						<center><Link to="/privacy">View Privacy Statement</Link></center>
+					</Col>
+				</Row>
 			</Container>
 		</Panel>
 	</div>

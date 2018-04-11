@@ -12,6 +12,7 @@ import Settings from "./pages/Settings";
 import About from "./pages/About";
 import Daily from "./pages/Daily";
 import Weekly from "./pages/Weekly";
+import Privacy from "./pages/Privacy";
 import { Col, Row, Container } from "./components/Grid";
 
 import profileData from "./pages/Profile/profileData.json";
@@ -49,6 +50,7 @@ class App extends Component {
 									<Route exact path="/about" component={About} />
 									<Route exact path="/contact" component={Results} />
 									<Route exact path="/settings" component={Settings} />
+									<Route exact path="/privacy" component={Privacy} />
 									<Route component={NoMatch} />
 								</Switch>
 							</Col>
