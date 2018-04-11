@@ -10,6 +10,8 @@ import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import About from "./pages/About";
+import Daily from "./pages/Daily";
+import Weekly from "./pages/Weekly";
 import { Col, Row, Container } from "./components/Grid";
 
 import profileData from "./pages/Profile/profileData.json";
@@ -17,9 +19,7 @@ import profileData from "./pages/Profile/profileData.json";
 class App extends Component { 
 
 	state = {
-		"score": 0,
-		"hiscore": 0,
-		"message": "Click A Veggie!"
+
 	};
 
 	render() {
@@ -39,8 +39,8 @@ class App extends Component {
 								<Switch>
 									<Route exact path="/" component={Login} />
 									<Route exact path="/results" component={Results} />
-									<Route exact path="/search/weekly" component={Results} />
-									<Route exact path="/search/daily" component={Results} />
+									<Route exact path="/search/weekly" component={Weekly} />
+									<Route exact path="/search/daily" component={Daily} />
 									<Route exact path="/search/custom" component={Results} />
 									<Route exact path="/results/:id" component={Results} />
 									<Route exact path="/profile" render = { () => 
