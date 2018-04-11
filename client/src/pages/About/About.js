@@ -30,6 +30,7 @@ const About = props => (
 						<p>As a working professional, it's important to keep up a professional public image. As a company, it's vital to manage your PR through smart news releases. As an individual, it's fun to connect with others online.</p>
 						<p>Like most people, Arthur has access to all of these points of reference from social media sites, news sources, RSS feeds, and online searches. Unlike most people, Arthur can find all of this information, organize it, and deliver it to you in seconds.</p>
 						<p>Arthur only uses information that has been made publicly available. Arthur does not invade anyone's private life by searching for information that person hasn't made publicly available. We respect your privacy, and we respect your client's privacy as well.</p>
+						<p>View our <Link to="/privacy">Privacy Statement</Link> for more information.</p>
 					</Col>
 				</Row>
 			</Container>
@@ -51,11 +52,6 @@ const About = props => (
 								<div className="hDivider center-block"></div>
 							</div>
 						))}
-					</Col>
-				</Row>
-				<Row>
-					<Col size="lg-12 md-12 sm-12 xs-12">
-						<center><Link to="/privacy">View Privacy Statement</Link></center>
 					</Col>
 				</Row>
 			</Container>
