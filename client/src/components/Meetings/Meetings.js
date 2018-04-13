@@ -3,7 +3,7 @@ import "./Meetings.css";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import CalendarActivities from '../../utils/data';
-
+import Moment from "moment";
 // const Meetings = props => (
 // 	<div key={props.meetingData.meetings[0].participants[0].email} >
 
@@ -63,13 +63,14 @@ class Meetings extends React.Component {
 				<li>
 					{this.state.events && this.state.events.map(( obj, index ) => (
 						<div key={index.toString()}>
-							<h4> Meeting Name: {obj.summary} </h4>
+							<h4> Meeting Name: {obj.summary}</h4>
 							<ul>
-								<li> {obj.start.dateTime || obj.start.date}</li>
+
+								<li>{Moment(obj.start.dateTime || obj.start.date).format('MMMM Do YYYY, h:mm:ss a')}</li>
 									{obj.attendees && obj.attendees.map((data, index) => (
 									<li key={`${index.toString()}
-									-${data.displayName}`}> {data.displayName} -
-									 {data.email}  </li>
+									-${data.displayName}`}> {data.displayName} {data.email} </li>
+
 								))}
 							</ul>
 
