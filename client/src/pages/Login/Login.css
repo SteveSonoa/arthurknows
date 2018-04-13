@@ -9,3 +9,13 @@
 		-3px 3px 0 #034,
 		3px 3px 0 #034;
 }
+
+.loginButton {
+	background-image: url('/img/googlesignin.png');
+	width: 400px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+       background-color: transparent;
+       border:0;
+}
