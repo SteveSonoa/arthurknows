@@ -1,18 +1,56 @@
 import React from "react";
 import { Col, Row, Container } from "../../components/Grid";
+import { GoogleLogin } from 'react-google-login';
 import "./Login.css";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import Api from '../../utils/API';
+import Calendar from '../Calendar';
+import AuthService from '../../utils/AuthService';
 
-const Login = props => (
+class Login extends React.Component {
+
+	constructor (props) {
+    super(props);
+    this.state = {
+      login: false
+    }
+  }
+
+  googleSuccessResponse = (res) => {
+    let that = this;
+    Api.verifyToken(res.tokenId).then(( data ) => {
+      AuthService.authorize(true);
+	
+      that.props.history.push('/settings');
+    })
+  }
+
+  googleErrorResponse = (res) => {
+
+  }
+
+  render () {
+    return (
+
 	<Container fluid>
 		<Row>
 			<Col size="lg-12 md-12 sm-12 xs-12">
 				<h1 className="text-center loginTitle">Welcome To</h1>
 				<h1 className="text-center loginTitle">A R T H U R</h1>
-				<Link to='/results'><img src="./img/googlesignin.png" className="img img-responsive center-block" /></Link>
-			</Col>
-		</Row>
-	</Container>
-);
+				<Calendar login/>
+             	<GoogleLogin
+              	clientId="1078553084952-d48o52dsfbc7qjg9vavlc33m67e3jbp8.apps.googleusercontent.com   "
+				//<Link to='/results'><img src="./img/googlesignin.png" className="img img-responsive center-block" /></Link>
+			buttonText=""
+			className="loginButton"
 
+              onSuccess={this.googleSuccessResponse}
+              onFailure={this.googleErrorResponse}
+            />
+          </Col>
+        </Row>
+      </Container>
+    )
+  }
+}
 export default Login;

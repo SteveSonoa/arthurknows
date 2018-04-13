@@ -9,6 +9,7 @@ import postsCompanyData from "../../components/Results/data/postsCompany.json";
 import postsPersonData from "../../components/Results/data/postsPerson.json";
 import sharedData from "../../components/Results/data/shared.json";
 import twitterData from "../../components/Results/data/twitter.json";
+import CalendarActivities from '../../utils/data';
 
 const Results = props => (
 	<Panel>
@@ -68,5 +69,6 @@ const Results = props => (
 		</Container>
 	</Panel>
 );
+
 
 export default Results;

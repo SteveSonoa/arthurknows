@@ -16,6 +16,7 @@ const Daily = props => (
 							<Col size="lg-12 md-12 sm-12 xs-12">
 								<Meetings
 									meetingData={meetingData}
+									location={props.location}
 								/>
 							</Col>
 						</Row>
