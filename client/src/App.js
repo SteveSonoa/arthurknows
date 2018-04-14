@@ -43,7 +43,7 @@ class App extends Component {
 									<Route exact path="/search/weekly" component={Weekly} />
 									<Route exact path="/search/daily" component={Daily} />
 									<Route exact path="/search/custom" component={Results} />
-									<Route exact path="/results/:id" component={Results} />
+									<Route exact path="/results/:personInfo" component={Results} />
 									<Route exact path="/profile" render = { () =>
 										<Profile profileData={profileData}/>
 									} />

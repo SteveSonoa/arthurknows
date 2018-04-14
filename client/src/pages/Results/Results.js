@@ -11,8 +11,10 @@ import sharedData from "../../components/Results/data/shared.json";
 import twitterData from "../../components/Results/data/twitter.json";
 import CalendarActivities from '../../utils/data';
 
+
 const Results = props => (
-	<Panel>
+
+	<Panel>{console.log(props.personInfo)}
 		<Container fluid>
 			<Row>
 				<Col size="lg-12 md-12 sm-12 xs-12">
@@ -33,7 +35,7 @@ const Results = props => (
 						shared={sharedData}
 					/>
 					<div className="hDivider center-block"></div>
-				</Col>						
+				</Col>
 			</Row>
 			<Row>
 				<Col size="lg-5 md-5 sm-12 xs-12">
