@@ -68,9 +68,13 @@ class Meetings extends React.Component {
 
 								<li>{Moment(obj.start.dateTime || obj.start.date).format('MMMM Do YYYY, h:mm:ss a')}</li>
 									{obj.attendees && obj.attendees.map((data, index) => (
-									<li key={`${index.toString()}
-									-${data.displayName}`}> {data.displayName} {data.email} </li>
-
+										<div key={`${index.toString()}-${data.displayName}`}>
+												<li> {data.displayName} {data.email} </li>
+												<li><Link to="/results" params={{personInfo: {displayName: data.displayName, email: data.email}}}> Research Me</Link></li>
+										</div>
+									// <li key={`${index.toString()}-${data.displayName}`}> {data.displayName} {data.email} </li>
+									// 	<li key={`${index.toString()}-${data.displayName}`}> {data.displayName} {data.email} </li>
+										// <li key={`${index.toString()}`}>(<button> Research Me</button>)</li>
 								))}
 							</ul>
 
