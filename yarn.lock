@@ -1332,10 +1332,6 @@ mixin-deep@^1.2.0:
   dependencies:
     minimist "0.0.8"
 
-moment@^2.22.0:
-  version "2.22.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.0.tgz#7921ade01017dd45186e7fee5f424f0b8663a730"
-
 mongodb-core@3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-3.0.4.tgz#a3fdf466e697a2f1df87e458e5e2df1c26cc654b"
@@ -1680,9 +1676,9 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-google-login@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/react-google-login/-/react-google-login-3.2.0.tgz#c5ea01231a010a59fc1741e6463e2dcbab1d3f00"
+react-google-login@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/react-google-login/-/react-google-login-3.2.1.tgz#9ab6ac3694d0e6e2974f1e588c53cf7b903a36e6"
   dependencies:
     "@types/react" "*"
     prop-types "^15.6.0"
