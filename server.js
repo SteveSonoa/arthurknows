@@ -14,7 +14,17 @@ app.use(express.static("client/build"));
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+// Set up promises with mongoose 
+mongoose.Promise = global.Promise;
+// Connect to the Mongo DB
+mongoose.connect(
+  // Production:
+  // process.env.MONGODB_URI || "mongodb://localhost/arthur"
+
+  // Test:
+  "mongodb://localhost/arthur"
+
+);
 
 // Start the API server
 app.listen(PORT, function() {

@@ -1,11 +1,14 @@
 // MAKE SURE FILE PATHS ARE CORRECT:
 require('dotenv').config({path: '../.env'});
 const apiKeys = require('../keys.js');
+const db = require("../models");
+const LocalNews = require("../models/localNews.js");
 
 var request = require("request");
 
 const bingCustomSearch = {
-  customSearch: function(searched) {
+  customSearch: function(searched, personSearchId) {
+    
     console.log("running");
     var subscriptionKey = apiKeys.bingCustomSearchAPIKey;
     var customConfigId = apiKeys.bingCustomSearchCustomConfigId;
@@ -31,6 +34,22 @@ const bingCustomSearch = {
         for (var i = 0; i < searchResponse.webPages.value.length; ++i) {
           let customSearchObj = {};
           var webPage = searchResponse.webPages.value[i];
+
+          // Add to database:
+
+          LocalNews.findOrCreate(
+            {
+              name: webPage.name,
+              url: webPage.url,
+              displayUrl: webPage.displayUrl,
+              snippet: webPage.snippet,
+              dateLastCrawled: webPage.dateLastCrawled,
+              person: personSearchId
+            }, 
+            (err, dbResults) =>{
+              console.log(dbResults);
+              // db.PersonSearch.findOneAndUpdate({_id: personSearchId}, {$push: {_id: dbResults._id}})
+            });
 
           // Name:
           // console.log("name: " + webPage.name);

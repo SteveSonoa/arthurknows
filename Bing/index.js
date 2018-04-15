@@ -7,6 +7,14 @@ const bingEntitySearch = require('./bing-entity-search.js');
 // bingCustomSearch.customSearch('Chase Bank');
     // bingEntitySearch.searchEntity('Godaddy');
 
+    // export default {bingSearch, bingCustomSearch, bingEntitySearch};
+
+module.exports = {
+    bingSearch,
+    bingCustomSearch,
+    bingEntitySearch
+};
+
 
 
 
