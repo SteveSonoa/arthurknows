@@ -99,8 +99,9 @@ class App extends React.Component {
           let todaysArray = [];
           let weekArray = [];
           eventItems.map((event, i) => {
-            const start = event.start.dateTime || event.start.date;
-            let presentDate = moment(new Date(event.start.dateTime));
+            const start = moment(event.start.dateTime || event.start.date);
+           
+            let presentDate = moment(new Date(start));
             let difference = presentDate.diff(todaysDate, 'days');
             if(difference === 0) {
               todaysArray.push(event);
