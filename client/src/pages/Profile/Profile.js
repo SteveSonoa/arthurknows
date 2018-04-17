@@ -22,7 +22,7 @@ const Profile = props => (
 						  </div>
 
 						  <div className="form-group col-xs-9 col-sm-9 col-md-9 col-lg-9">
-						    <label for="myEail">Email Address</label>
+						    <label for="myEmail">Email Address</label>
 						    <input type="email" className="form-control" id="myEmail" defaultValue={props.profileData.email} placeholder="me@example.com" />
 						  </div>
 						  <div className="form-group col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -35,10 +35,15 @@ const Profile = props => (
 						    </select>
 						  </div>
 
-					      <label for="myLinkedIn" className="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">www.linkedin.com/in/</label>
-					      <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-					        <input type="text" className="form-control" id="myLinkedIn" defaultValue={props.profileData.linkedin} />
-					      </div>
+						  <div className="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						    <label for="myCompany">Company Name</label>
+						    <input type="text" className="form-control col-xs-6 col-sm-6 col-md-6 col-lg-6" id="myCompany" defaultValue="Company" placeholder="(Optional)" />
+						  </div>
+
+						  <div className="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						    <label for="myTitle">Job Title</label>
+						    <input type="text" className="form-control col-xs-6 col-sm-6 col-md-6 col-lg-6" id="myTitle" defaultValue="Title" placeholder="(Optional)" />
+						  </div>
 
 					      <div>
 						      <button className="btn btn-success col-xs-6 col-sm-6 col-md-6 col-lg-6">Save Changes</button>
