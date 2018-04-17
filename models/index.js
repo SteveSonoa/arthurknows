@@ -1,4 +1,10 @@
 module.exports = {
-  Book: require("./book")
-  PersonSearch: require("./personSearch")
+
+  User: require("./user"), 
+
+  PersonSearch: require("./personSearch"),
+
+  LocalNews: require("./localNews"),
+
+  Company: require("./companies")
 };
