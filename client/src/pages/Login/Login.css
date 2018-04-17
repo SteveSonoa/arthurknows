@@ -13,3 +13,13 @@
 .login_marginTop {
 	margin-top: 50px;
 }
+
+.loginButton {
+	background-image: url('/img/googlesignin.png');
+	width: 400px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+       background-color: transparent;
+       border:0;
+}

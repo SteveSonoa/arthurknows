@@ -8,16 +8,16 @@ import Results from "./pages/Results";
 import Login from "./pages/Login";
 import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
-import Settings from "./pages/Settings";
+import Settings from "./pages/Settings/Settings.js";
 import About from "./pages/About";
 import Daily from "./pages/Daily";
 import Weekly from "./pages/Weekly";
 import Privacy from "./pages/Privacy";
 import { Col, Row, Container } from "./components/Grid";
-
 import profileData from "./pages/Profile/profileData.json";
+import SecretRoute from './pages/Settings';
 
-class App extends Component { 
+class App extends Component {
 
 	state = {
 
@@ -31,7 +31,7 @@ class App extends Component {
 						<source src="/img/test4.mp4" type="video/mp4" />
 					</video>
 					<Nav />
-					<Container>				
+					<Container>
 						<Row>
 							<Col size="md-4 sm-12">
 								<Arthur />
@@ -39,12 +39,12 @@ class App extends Component {
 							<Col size="md-8 sm-12">
 								<Switch>
 									<Route exact path="/" component={Login} />
-									<Route exact path="/results" component={Results} />
+									<SecretRoute path="/settings" component={Settings} />
 									<Route exact path="/search/weekly" component={Weekly} />
 									<Route exact path="/search/daily" component={Daily} />
 									<Route exact path="/search/custom" component={Results} />
-									<Route exact path="/results/:id" component={Results} />
-									<Route exact path="/profile" render = { () => 
+									<Route exact path="/results/:personInfo" component={Results} />
+									<Route exact path="/profile" render = { () =>
 										<Profile profileData={profileData}/>
 									} />
 									<Route exact path="/about" component={About} />
