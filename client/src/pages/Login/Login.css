@@ -10,6 +10,10 @@
 		3px 3px 0 #034;
 }
 
+.login_marginTop {
+	margin-top: 50px;
+}
+
 .loginButton {
 	background-image: url('/img/googlesignin.png');
 	width: 400px;
