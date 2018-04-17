@@ -14,14 +14,14 @@ var LocalNewsSchema = new Schema({
   displayUrl: String,
   snippet: String,
   dataLastCrawled: String, 
-  person: [
-    {
-      // Store ObjectIds in the array
-      type: Schema.Types.ObjectId,
-      // The ObjectIds will refer to the ids in the Note model
-      ref: "PersonSearch"
-    }
-  ]
+  // person: [
+  //   {
+  //     // Store ObjectIds in the array
+  //     type: Schema.Types.ObjectId,
+  //     // The ObjectIds will refer to the ids in the Note model
+  //     ref: "PersonSearch"
+  //   }
+  // ]
 
 });
 

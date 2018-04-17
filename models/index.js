@@ -4,5 +4,7 @@ module.exports = {
 
   PersonSearch: require("./personSearch"),
 
+  LocalNews: require("./localNews"),
+
   Company: require("./companies")
 };

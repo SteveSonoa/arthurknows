@@ -1,6 +1,6 @@
 // MAKE SURE FILE PATHS ARE CORRECT:
-require('dotenv').config({path: '../.env'});
-const apiKeys = require('../keys.js');
+require("dotenv").config({ path: "../.env" });
+const apiKeys = require("../keys.js");
 const db = require("../models");
 const LocalNews = require("../models/localNews.js");
 
@@ -8,7 +8,6 @@ var request = require("request");
 
 const bingCustomSearch = {
   customSearch: function(searched, personSearchId) {
-    
     console.log("running");
     var subscriptionKey = apiKeys.bingCustomSearchAPIKey;
     var customConfigId = apiKeys.bingCustomSearchCustomConfigId;
@@ -37,18 +36,32 @@ const bingCustomSearch = {
 
           // Add to database:
 
-          LocalNews.findOrCreate(
-            {
-              name: webPage.name,
-              url: webPage.url,
-              displayUrl: webPage.displayUrl,
-              snippet: webPage.snippet,
-              dateLastCrawled: webPage.dateLastCrawled,
-              person: personSearchId
-            }, 
-            (err, dbResults) =>{
+          db.LocalNews.create({
+            name: webPage.name,
+            url: webPage.url,
+            displayUrl: webPage.displayUrl,
+            snippet: webPage.snippet,
+            dateLastCrawled: webPage.dateLastCrawled
+            // person: personSearchId
+          })
+            .then(dbResults => {
               console.log(dbResults);
-              // db.PersonSearch.findOneAndUpdate({_id: personSearchId}, {$push: {_id: dbResults._id}})
+              db.PersonSearch.findByIdAndUpdate(
+                personSearchId,
+                { $push: { localnews: dbResults._id } },
+                { new: true }
+              )
+                .then(dbData => {
+                  console.log(dbData);
+                })
+                .catch(function(err) {
+                  // If an error occurs, send it back to the client
+                  console.log(err);
+                });
+            })
+            .catch(function(err) {
+              // If an error occurs, send it back to the client
+              console.log(err);
             });
 
           // Name:

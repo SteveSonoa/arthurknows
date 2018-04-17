@@ -3,42 +3,45 @@ const bing = require("../Bing");
 const LocalNews = require("../models/localNews.js");
 
 module.exports = {
-    searchPerson: function(req, res){
-        console.log(req.body);
-        db.PersonSearch
-        .findOne({firstName: req.body.firstName, lastName: req.body.lastName, company: req.body.company})        
-        .then(dbResults =>{
-            // console.log(dbResults)
-            let resultsArray = [];
+  searchPerson: function(req, res) {
+    console.log(req.body);
+    db.PersonSearch.findOne({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      company: req.body.company
+    })
+      .populate("localnews")
+      .then(dbResults => {
+        // console.log(dbResults)
+        // let resultsArray = [];
 
-            if(dbResults == null){                
-                console.log("run the bing search!");
-               bing.bingSearch.regularSearch(req.body.firstName, req.body.lastName, req.body.company);
+        if (!dbResults == true && typeof dbResults == "object") {
+          console.log("run the bing search!");
+          bing.bingSearch.regularSearch(
+            req.body.firstName,
+            req.body.lastName,
+            req.body.company
+          );          
+         
+          
+          res.json("User added to database");
+        } else {
+          res.json(dbResults);
+          // resultsArray.push(dbResults);
+          // bing.bingCustomSearch.customSearch(req.body.company)
 
-               res.json("User added to database"); 
-                
-            }
-            else{
-                // res.json(dbResults);
-                resultsArray.push(dbResults);
-                // bing.bingCustomSearch.customSearch(req.body.company)
+          // return LocalNews.find({ person: dbResults._id }).populate("LocalNews")
+          //                 .then(dbNews => {
+          //                     // res.json(dbNews);
+          //                     resultsArray.push(dbNews);
 
-                return LocalNews.find({person: dbResults._id}).populate("PersonSearch")
-                                .then(dbNews => {
-                                    // res.json(dbNews);
-                                    resultsArray.push(dbNews);
-
-                                    res.json(resultsArray);
-                                })
-            }
-        })
-        .catch(err => res.status(422).json(err));     
-    }
-}
-
-
-
-
+          //                     res.json(resultsArray);
+          //                 })
+        }
+      })
+      .catch(err => res.status(422).json(err));
+  }
+};
 
 // function checkForCompany(req){
 //     if(req.company){
@@ -76,7 +79,6 @@ module.exports = {
 //     }
 // }
 
-
 // Defining methods for the booksController
 // module.exports = {
 //   findAll: function(req, res) {
@@ -85,7 +87,7 @@ module.exports = {
 //       .sort({ date: -1 })
 //       .then((dbModel) => res.json(dbModel))
 //       .catch(err => res.status(422).json(err));
-//   },  
+//   },
 //   create: function(req, res) {
 //     db.PersonSearch
 //       .create(req.body)
