@@ -8,8 +8,6 @@ const userSchema = new Schema({
   company: { type: String, required: false },
   gender: { type: String, required: false },
   title: { type: String, required: false },
-  google_oAuth_token: { type: String, required: false },
-  google_calendar_token: { type: String, required: false },
   billingTier: { type: Number, required: false },
   sarcasm: { type: Number, required: false },
   date: { type: Date, default: Date.now }

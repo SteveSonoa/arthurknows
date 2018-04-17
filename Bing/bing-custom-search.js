@@ -1,11 +1,13 @@
 // MAKE SURE FILE PATHS ARE CORRECT:
-require('dotenv').config({path: '../.env'});
-const apiKeys = require('../keys.js');
+require("dotenv").config({ path: "../.env" });
+const apiKeys = require("../keys.js");
+const db = require("../models");
+const LocalNews = require("../models/localNews.js");
 
 var request = require("request");
 
 const bingCustomSearch = {
-  customSearch: function(searched) {
+  customSearch: function(searched, personSearchId) {
     console.log("running");
     var subscriptionKey = apiKeys.bingCustomSearchAPIKey;
     var customConfigId = apiKeys.bingCustomSearchCustomConfigId;
@@ -31,6 +33,36 @@ const bingCustomSearch = {
         for (var i = 0; i < searchResponse.webPages.value.length; ++i) {
           let customSearchObj = {};
           var webPage = searchResponse.webPages.value[i];
+
+          // Add to database:
+
+          db.LocalNews.create({
+            name: webPage.name,
+            url: webPage.url,
+            displayUrl: webPage.displayUrl,
+            snippet: webPage.snippet,
+            dateLastCrawled: webPage.dateLastCrawled
+            // person: personSearchId
+          })
+            .then(dbResults => {
+              console.log(dbResults);
+              db.PersonSearch.findByIdAndUpdate(
+                personSearchId,
+                { $push: { localnews: dbResults._id } },
+                { new: true }
+              )
+                .then(dbData => {
+                  console.log(dbData);
+                })
+                .catch(function(err) {
+                  // If an error occurs, send it back to the client
+                  console.log(err);
+                });
+            })
+            .catch(function(err) {
+              // If an error occurs, send it back to the client
+              console.log(err);
+            });
 
           // Name:
           // console.log("name: " + webPage.name);

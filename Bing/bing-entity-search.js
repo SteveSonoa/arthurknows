@@ -2,12 +2,16 @@
 require("dotenv").config({ path: "../.env" });
 const apiKeys = require("../keys.js");
 ("use strict");
+const db = require("../models");
+const bing = require("./bing-custom-search");
 
 let https = require("https");
 
 const bingEntitySearch = {
-  searchEntity: function(entity) {
+  searchEntity: function(entity, firstName, lastName) {
     let subscriptionKey = apiKeys.bingEntitySearchAPIKey;
+
+    
 
     let host = "api.cognitive.microsoft.com";
     let path = "/bing/v7.0/entities";
@@ -26,7 +30,7 @@ const bingEntitySearch = {
         let body_ = JSON.parse(body);
         let body__ = JSON.stringify(body_, null, "  ");
         // console.log(body__);
-        bingEntitySearch.handleResults(body_);
+        bingEntitySearch.handleResults(body_, firstName, lastName, entity);
       });
       response.on("error", function(e) {
         console.log("Error: " + e.message);
@@ -50,7 +54,7 @@ const bingEntitySearch = {
     Search();
   },
 
-  handleResults: function(results) {
+  handleResults: function(results, firstName, lastName, company) {
     // Empty object to build our data object
     let entitySearchObj = {};
 
@@ -83,7 +87,72 @@ const bingEntitySearch = {
       // Could possibly grab Wikipedia page if needed. Lives in contractualRules array
     }
 
-    return console.log(entitySearchObj);
+    if(entitySearchObj.companyWebsiteUrl && entitySearchObj.companyDescription){
+      console.log("lets store both!");
+        db.Company.create({company: company, 
+          companyURL: entitySearchObj.companyWebsiteUrl, 
+          companyDescription: entitySearchObj.companyDescription})
+          .then(dbBothResults =>{
+            db.PersonSearch.findOneAndUpdate(
+              {
+              firstName: firstName, 
+              lastName: lastName, 
+              company: company
+            },
+            {
+              $set: {
+                companyURL: dbBothResults.companyURL,
+                companyDescription: dbBothResults.companyDescription
+              }
+            })
+            .then(dbPersonBothUpdate => {
+              console.log("BINGO!!!!");
+              console.log(dbPersonBothUpdate);
+
+              bing.customSearch(company, dbPersonBothUpdate._id);
+
+
+            })
+          })   
+      
+    }
+    else if(entitySearchObj.companyWebsiteUrl){
+      console.log("only store one");
+
+      db.Company.create({company: company, 
+        companyURL: entitySearchObj.companyWebsiteUrl
+        })
+        .then(dbBothResults =>{
+          db.PersonSearch.findOneAndUpdate(
+            {
+            firstName: firstName, 
+            lastName: lastName, 
+            company: company
+          },
+          {
+            $set: {
+              companyURL: dbBothResults.companyURL              
+            }
+          })
+          .then(dbPersonBothUpdate => {
+            console.log("BINGO!!!!");
+            console.log(dbPersonBothUpdate);
+
+            bing.customSearch(company, dbPersonBothUpdate._id);
+
+
+          })
+        })
+    }
+    else{
+
+      // I'm going out on a limb and presupposing that if the company doesn't have a website
+      // or description come back from Bing entity search then they won't have any local news
+      // articles show up on the custom search.
+      console.log("store company name only");
+      db.Company.create({company: company})
+      
+    }
   }
 };
 
