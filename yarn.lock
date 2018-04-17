@@ -1436,6 +1436,14 @@ mongodb@3.0.4:
   dependencies:
     mongodb-core "3.0.4"
 
+mongoose-find-or-create@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/mongoose-find-or-create/-/mongoose-find-or-create-1.3.1.tgz#415a4a7d1094a9b56ca42b0366926f05aef0e362"
+
+mongoose-findorcreate@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/mongoose-findorcreate/-/mongoose-findorcreate-3.0.0.tgz#490acf67c16061de74f7d1b92906538a62554a6d"
+
 mongoose-legacy-pluralize@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/mongoose-legacy-pluralize/-/mongoose-legacy-pluralize-1.0.2.tgz#3ba9f91fa507b5186d399fb40854bff18fb563e4"
