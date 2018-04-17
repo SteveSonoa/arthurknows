@@ -98,6 +98,8 @@ class App extends React.Component {
         
           let todaysArray = [];
           let weekArray = [];
+          
+
           eventItems.map((event, i) => {
             const start = moment(event.start.dateTime || event.start.date);
            
