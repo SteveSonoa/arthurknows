@@ -4,8 +4,13 @@ import { Col, Row, Container } from "../../components/Grid";
 import Meetings from "../../components/Meetings";
 import "./Weekly.css";
 import meetingData from "../../components/Meetings/data/meetingData.json";
+import PropTypes from "prop-types";
+
 
 class Weekly extends React.Component {
+	static contextTypes = {
+    router: PropTypes.object
+  }
 	constructor (props) {
 		super(props);
 		this.props.updatePage('Weekly');

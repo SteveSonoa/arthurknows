@@ -1,6 +1,6 @@
 import React from "react";
 import "./Meetings.css";
-import { Link } from "react-router-dom";
+import { Link, withRouter} from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import CalendarActivities from '../../utils/data';
 import Moment from "moment";
@@ -27,6 +27,8 @@ import Moment from "moment";
 // export default Meetings;
 
 class Meetings extends React.Component {
+
+
 
 	state = {
 		events: []
@@ -89,4 +91,4 @@ class Meetings extends React.Component {
 
 }
 
-export default Meetings;
+export default withRouter(Meetings);

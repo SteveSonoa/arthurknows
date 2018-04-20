@@ -3,12 +3,13 @@ import { Col, Row, Container } from "../../components/Grid";
 import Panel from "../../components/Panel";
 import { GoogleLogin } from 'react-google-login';
 import "./Login.css";
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Api from '../../utils/API';
 import Calendar from '../Calendar';
 import AuthService from '../../utils/AuthService';
 
 class Login extends React.Component {
+
 
 	constructor (props) {
 		super(props);
@@ -18,18 +19,19 @@ class Login extends React.Component {
 		this.props.updatePage('Login');
 	}
 
+ 
 	googleSuccessResponse = (res) => {
 		let that = this;
 		Api.verifyToken(res.tokenId).then(( data ) => {
 			AuthService.authorize(true);
 			console.log(data);
-			// Arrow functions preserve lexical this
-			this.props.history.push('/settings');
+      // Arrow functions preserve lexical this
+      
+     	this.props.history.push('/settings');
 		})
 	}
 
 	googleErrorResponse = (res) => {
-
 	}
 
 	render () {
@@ -65,4 +67,4 @@ class Login extends React.Component {
 		)
 	}
 }
-export default Login;
+export default withRouter(Login);
