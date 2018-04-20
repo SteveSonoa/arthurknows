@@ -22,7 +22,7 @@ class Login extends React.Component {
 		let that = this;
 		Api.verifyToken(res.tokenId).then(( data ) => {
 			AuthService.authorize(true);
-
+			console.log(data);
 			that.props.history.push('/settings');
 		})
 	}

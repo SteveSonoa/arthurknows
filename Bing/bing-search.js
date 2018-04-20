@@ -50,7 +50,7 @@ const bingSearch = {
       // let term = searched;
     
       let linkedIn = "linkedIn";
-      let city = bingSearch.cityArray[cityIndex];
+      let city = bingSearch.cityArray[cityIndex];      
       let state = "Arizona";
       let term = `'${firstName + " " + lastName}' ${linkedIn} '${city +
         ", " +
@@ -188,17 +188,75 @@ const bingSearch = {
             console.log("no more searches");
             // Live: (Lie could also just return an empty array if need be....)
             // return false;
-            return [];
+            // return [];
+
+          return  db.PersonSearch.create({firstName: firstName, 
+              lastName: lastName,
+              company: company             
+             }).then(dbResult =>{
+              //  console.log(dbResult);
+                db.Company.find({company}).then(dbCompany =>{
+                  // console.log(dbCompany);
+  
+                  if(dbCompany.length === 0){
+                    // console.log(dbResult);
+                    bing.searchEntity(company, dbResult.firstName, dbResult.lastName)
+                  }
+                  else{
+                    if(dbCompany[0].companyURL && dbCompany[0].companyDescription){
+                      db.PersonSearch.findOneAndUpdate(
+                        {
+                        firstName: firstName, 
+                        lastName: lastName, 
+                        company: company
+                      },
+                      {
+                        $set: {
+                          companyURL: dbCompany[0].companyURL,
+                          companyDescription: dbCompany[0].companyDescription
+                        }
+                      })
+                      .then(dbPersonBothUpdate => {
+                        console.log(dbPersonBothUpdate);
+  
+                        newSearch.customSearch(company, dbPersonBothUpdate._id);
+                      })
+                    }
+                    else if(dbCompany[0].companyURL){
+                      db.PersonSearch.findOneAndUpdate(
+                        {
+                        firstName: firstName, 
+                        lastName: lastName, 
+                        company: company
+                      },
+                      {
+                        $set: {
+                          companyURL: dbCompany[0].companyURL                        
+                        }
+                      })
+                      .then(dbPersonBothUpdate => {
+                        console.log(dbPersonBothUpdate);
+                        newSearch.customSearch(company, dbPersonBothUpdate._id);
+                      })
+                    }                 
+                  }
+  
+   
+                })
+             })
           }
         }
         // Testing:
         // console.log(resultsArray);
 
         let actualArray = resultsArray;
+
+        
        
 
         if(actualArray.length > 0){
           console.log("store to database");
+          console.log(actualArray);
           console.log(company);
           db.PersonSearch.create({firstName: firstName, 
             lastName: lastName,

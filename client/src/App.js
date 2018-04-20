@@ -13,6 +13,7 @@ import About from "./pages/About";
 import Daily from "./pages/Daily";
 import Weekly from "./pages/Weekly";
 import Privacy from "./pages/Privacy";
+import FAQ from "./pages/FAQ";
 import { Col, Row, Container } from "./components/Grid";
 import profileData from "./pages/Profile/profileData.json";
 import SecretRoute from './pages/Settings';
@@ -72,6 +73,9 @@ class App extends Component {
 									<Route exact path="/settings" render = { () =>
 										<Settings updatePage={this.updatePage} />
 									} />
+									<Route exact path="/faq" render = { () =>
+										<FAQ updatePage={this.updatePage} />
+									} />									
 									<Route exact path="/privacy" render = { () =>
 										<Privacy updatePage={this.updatePage} />
 									} />
