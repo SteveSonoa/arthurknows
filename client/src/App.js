@@ -17,6 +17,7 @@ import FAQ from "./pages/FAQ";
 import { Col, Row, Container } from "./components/Grid";
 import profileData from "./pages/Profile/profileData.json";
 import SecretRoute from './pages/Settings';
+import CustomSearch from './pages/CustomSearch';
 
 class App extends Component {
 
@@ -71,6 +72,12 @@ class App extends Component {
 										<Results updatePage={this.updatePage} />
 									} />
 									<Route exact path="/settings" render = { () =>
+										<Settings updatePage={this.updatePage} />
+									} />
+									<Route exact path="/customsearch" render = { () =>
+										<CustomSearch />
+									} />
+									<Route exact path="/CustomSearchForm" render = { () =>
 										<Settings updatePage={this.updatePage} />
 									} />
 									<Route exact path="/faq" render = { () =>

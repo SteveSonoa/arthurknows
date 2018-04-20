@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Component } from 'react';
 import Panel from "../../components/Panel";
 import { Col, Row, Container } from "../../components/Grid";
+import CustomSearchForm from "../CustomSearchForm";
 
 
 class CustomSearch extends Component {
