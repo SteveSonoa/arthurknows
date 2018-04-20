@@ -20,7 +20,11 @@ import SecretRoute from './pages/Settings';
 class App extends Component {
 
 	state = {
+		page: "Login"
+	};
 
+	updatePage = (pageName) => {
+		this.setState({page: pageName});
 	};
 
 	render() {
@@ -34,23 +38,43 @@ class App extends Component {
 					<Container>
 						<Row>
 							<Col size="md-4 sm-12">
-								<Arthur />
+								<Arthur page={this.state.page} />
 							</Col>
 							<Col size="md-8 sm-12">
 								<Switch>
-									<Route exact path="/" component={Login} />
-									<SecretRoute path="/settings" component={Settings} />
-									<Route exact path="/search/weekly" component={Weekly} />
-									<Route exact path="/search/daily" component={Daily} />
-									<Route exact path="/search/custom" component={Results} />
-									<Route exact path="/results/:personInfo" component={Results} />
-									<Route exact path="/profile" render = { () =>
-										<Profile profileData={profileData}/>
+									<Route exact path="/" render = { () =>
+										<Login updatePage={this.updatePage} />
 									} />
-									<Route exact path="/about" component={About} />
-									<Route exact path="/contact" component={Results} />
-									<Route exact path="/settings" component={Settings} />
-									<Route exact path="/privacy" component={Privacy} />
+									<SecretRoute path="/settings" render = { () =>
+										<Settings updatePage={this.updatePage} />
+									} />
+									<Route exact path="/search/weekly" render = { () =>
+										<Weekly updatePage={this.updatePage} />
+									} />
+									<Route exact path="/search/daily" render = { () =>
+										<Daily updatePage={this.updatePage} />
+									} />
+									<Route exact path="/search/custom" render = { () =>
+										<Results updatePage={this.updatePage} />
+									} />
+									<Route path="/results/:personInfo" render = { () =>
+										<Results updatePage={this.updatePage} />
+									} />
+									<Route exact path="/profile" render = { () =>
+										<Profile profileData={profileData} updatePage={this.updatePage} />
+									} />
+									<Route exact path="/about" render = { () =>
+										<About updatePage={this.updatePage} />
+									} />
+									<Route exact path="/contact" render = { () =>
+										<Results updatePage={this.updatePage} />
+									} />
+									<Route exact path="/settings" render = { () =>
+										<Settings updatePage={this.updatePage} />
+									} />
+									<Route exact path="/privacy" render = { () =>
+										<Privacy updatePage={this.updatePage} />
+									} />
 									<Route component={NoMatch} />
 								</Switch>
 							</Col>
