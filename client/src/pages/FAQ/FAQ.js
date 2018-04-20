@@ -2,8 +2,7 @@ import React from "react";
 import Panel from "../../components/Panel";
 import { Col, Row, Container } from "../../components/Grid";
 import "./FAQ.css";
-import { Link } from 'react-router-dom'
-import { Personal } from "../../components/Results";
+import { Link } from 'react-router-dom';
 
 
 const FAQ = props => (
@@ -29,7 +28,7 @@ const FAQ = props => (
 						<p>The more information you provide us, the better search criteria we can use.  However, depending on how common a name is, or how active your prospect is online, we can still return very good information.</p>
 
 						<h2>6. What if I don’t have a google account, can I still use Arthur? </h2>
-						<p>At this time, you can request a custom search even without logging into Arthur.  We won’t be able to access your calendar appointment info, so you will simply need to type in your search information.</p>
+						<p>Currently you can request a custom search even without logging into Arthur.  We won’t be able to access your calendar appointment info, so you will simply need to type in your search information.</p>
 					</Col>
 				</Row>
 			</Container>

@@ -13,8 +13,12 @@ const Profile = props => (
 					<h1>My Profile</h1>
 						<form className="form-horizontal">
 						  <div className="form-group col-xs-9 col-sm-9 col-md-9 col-lg-9">
-						    <label for="myName">My Name</label>
-						    <input type="text" className="form-control" id="myName" defaultValue={props.profileData.fullName} placeholder="Your Name" />
+						    <label for="firstName">First Name</label>
+						    <input type="text" className="form-control" id="firstName" defaultValue={props.profileData.firstName} placeholder="First Name" />
+						  </div>
+						  <div className="form-group col-xs-9 col-sm-9 col-md-9 col-lg-9">
+						    <label for="firstName">Last Name</label>
+						    <input type="text" className="form-control" id="lastName" defaultValue={props.profileData.lastName} placeholder="Last Name" />
 						  </div>
 						  <div className="form-group col-xs-3 col-sm-3 col-md-3 col-lg-3">
 						    <label for="myDob">DoB</label>

@@ -31,7 +31,7 @@ const Nav = () => (
         <li className="navTransition-hover"><Link to="/"><i className="fas fa-dollar-sign navMenuItem navi"></i>
           <p id="navTransition-hover-content" className="navp">Billing</p></Link>
         </li>
-        <li className="navTransition-hover"><Link to="/"><i className="fas fa-question navMenuItem navi"></i>
+        <li className="navTransition-hover"><Link to="/faq"><i className="fas fa-question navMenuItem navi"></i>
           <p id="navTransition-hover-content" className="navp">FAQ</p></Link>
         </li>
         <li className="navTransition-hover"><Link to="/"><i className="far fa-life-ring navMenuItem navi"></i>

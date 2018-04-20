@@ -2,7 +2,7 @@ import React from "react";
 import Panel from "../../components/Panel";
 import { Col, Row, Container } from "../../components/Grid";
 import "./About.css";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { Personal } from "../../components/Results";
 import creators from "./creators.json";
 

@@ -50,9 +50,10 @@ class App extends Component {
 									} />
 									<Route exact path="/about" component={About} />
 									<Route exact path="/contact" component={Results} />
+									<Route exact path="/FAQ" component={FAQ} />
 									<Route exact path="/settings" component={Settings} />
 									<Route exact path="/privacy" component={Privacy} />
-									<Route exact path="/FAQ" component={FAQ} />
+									
 									<Route component={NoMatch} />
 								</Switch>
 							</Col>
