@@ -28,14 +28,16 @@ import Moment from "moment";
 
 class Meetings extends React.Component {
 
+	state = {
+		events: []
+	}
+
 	constructor (props) {
 		super(props);
-
 		this.state = {
-			events: this.checkActivity(props.location.pathname)
+			events: this.checkActivity(this.props.location.pathname)
 		}
-
-		console.log(this.checkActivity(props.location.pathname))
+		console.log(this.checkActivity(this.props.location.pathname))
 	}
 
 	componentDidMount() {
@@ -47,7 +49,7 @@ class Meetings extends React.Component {
 		}
 
 		if(args.indexOf('weekly') !== -1) {
-      return  CalendarActivities.getWeek();
+			return  CalendarActivities.getWeek();
 		}
 	}
 

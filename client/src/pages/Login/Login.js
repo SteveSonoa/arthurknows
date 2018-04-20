@@ -23,7 +23,8 @@ class Login extends React.Component {
 		Api.verifyToken(res.tokenId).then(( data ) => {
 			AuthService.authorize(true);
 			console.log(data);
-			that.props.history.push('/settings');
+			// Arrow functions preserve lexical this
+			this.props.history.push('/settings');
 		})
 	}
 
