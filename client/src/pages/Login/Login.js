@@ -15,13 +15,14 @@ class Login extends React.Component {
 		this.state = {
 			login: false
 		}
+		this.props.updatePage('Login');
 	}
 
 	googleSuccessResponse = (res) => {
 		let that = this;
 		Api.verifyToken(res.tokenId).then(( data ) => {
 			AuthService.authorize(true);
-
+			console.log(data);
 			that.props.history.push('/settings');
 		})
 	}
@@ -39,7 +40,7 @@ class Login extends React.Component {
 						<h1 className="text-center loginTitle">Welcome To</h1>
 						<h1 className="text-center loginTitle">A R T H U R</h1>
 						<Calendar login/>
-						<GoogleLogin
+						<center><GoogleLogin
 							clientId="1078553084952-d48o52dsfbc7qjg9vavlc33m67e3jbp8.apps.googleusercontent.com   "
 							//<Link to='/results'><img src="./img/googlesignin.png" className="img img-responsive center-block" /></Link>
 							buttonText=""
@@ -47,7 +48,7 @@ class Login extends React.Component {
 
 							onSuccess={this.googleSuccessResponse}
 							onFailure={this.googleErrorResponse}
-						/>
+						/></center>
 					</Col>
 				</Row>
 				<Row>

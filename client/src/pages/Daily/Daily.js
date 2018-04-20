@@ -5,26 +5,35 @@ import Meetings from "../../components/Meetings";
 import "./Daily.css";
 import meetingData from "../../components/Meetings/data/singleMeetingData.json";
 
-const Daily = props => (
+class Daily extends React.Component {
+	constructor (props) {
+		super(props);
+		this.props.updatePage('Daily');
+	}
 
-	<div>
-		{meetingData.map(meetingData => (
-			<div key={meetingData.linkedin}>
-				<Panel>
-					<Container fluid>
-						<Row>
-							<Col size="lg-12 md-12 sm-12 xs-12">
-								<Meetings
-									meetingData={meetingData}
-									location={props.location}
-								/>
-							</Col>
-						</Row>
-					</Container>
-				</Panel>
+	render () {
+		return (
+
+			<div>
+				{meetingData.map(meetingData => (
+					<div key={meetingData.linkedin}>
+						<Panel>
+							<Container fluid>
+								<Row>
+									<Col size="lg-12 md-12 sm-12 xs-12">
+										<Meetings
+											meetingData={meetingData}
+											location={this.props.location}
+										/>
+									</Col>
+								</Row>
+							</Container>
+						</Panel>
+					</div>
+				))}
 			</div>
-		))}
-	</div>
-);
+		);
+	}
+};
 
 export default Daily;
