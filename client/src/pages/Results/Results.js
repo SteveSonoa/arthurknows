@@ -11,7 +11,6 @@ import sharedData from "../../components/Results/data/shared.json";
 import twitterData from "../../components/Results/data/twitter.json";
 import CalendarActivities from '../../utils/data';
 
-
 // PROPS INCLUDES THE FOLLOWING:
 	// resultHeadlines: [],
 	// resultTwitter: [],
