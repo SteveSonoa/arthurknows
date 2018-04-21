@@ -24,7 +24,9 @@ class CustomSearch extends Component {
         console.log(formData.firstName);
         console.log(formData.lastName);
         console.log(formData.company);
-        API.postBing(formData);
+        API.postBing(formData).then(data =>{
+          console.log(data);
+        })
    }
   
     handleInputChange = event => {
