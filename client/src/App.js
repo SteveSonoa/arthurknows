@@ -16,7 +16,8 @@ import Privacy from "./pages/Privacy";
 import FAQ from "./pages/FAQ";
 import { Col, Row, Container } from "./components/Grid";
 import profileData from "./pages/Profile/profileData.json";
-
+import SecretRoute from './pages/Settings';
+import CustomSearch from './pages/CustomSearch';
 
 class App extends Component {
 
@@ -55,9 +56,13 @@ class App extends Component {
 									<Route exact path="/search/daily" render = { () =>
 										<Daily updatePage={this.updatePage} />
 									} />
-									<Route exact path="/search/custom" render = { () =>
-										<Results updatePage={this.updatePage} />
-									} />
+									{/* <Route exact path="/search/custom" render = { () =>
+										<CustomSearch updatePage={this.updatePage} />
+									} /> */}
+
+									{/* Trying SOmething else for custom search: */}
+
+									<Route exact path="/search/custom" component={CustomSearch} />
 									<Route path="/results/:personInfo" render = { () =>
 										<Results updatePage={this.updatePage} />
 									} />
@@ -71,6 +76,12 @@ class App extends Component {
 										<Results updatePage={this.updatePage} />
 									} />
 									<Route exact path="/settings" render = { () =>
+										<Settings updatePage={this.updatePage} />
+									} />
+									<Route exact path="/customsearch" render = { () =>
+										<CustomSearch />
+									} />
+									<Route exact path="/CustomSearchForm" render = { () =>
 										<Settings updatePage={this.updatePage} />
 									} />
 									<Route exact path="/faq" render = { () =>

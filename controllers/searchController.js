@@ -4,11 +4,14 @@ const LocalNews = require("../models/localNews.js");
 
 module.exports = {
   searchPerson: function(req, res) {
-    console.log(req.body);
+    console.log("@@@@@@@@@@", req.body);
+
+    let company = emailHandler(req.body.company);
+
     db.PersonSearch.findOne({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
-      company: req.body.company
+      company: company
     })
       .populate("localnews")
       .then(dbResults => {
@@ -20,10 +23,9 @@ module.exports = {
           bing.bingSearch.regularSearch(
             req.body.firstName,
             req.body.lastName,
-            req.body.company
-          );          
-         
-          
+            company
+          );
+
           res.json("User added to database");
         } else {
           res.json(dbResults);
@@ -42,6 +44,43 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   }
 };
+
+function emailHandler(email) {
+  if (email.includes("@")) {
+    // As long as we have a RegEx email checker this will work
+    const genericEmailsArray = [
+      "gmail",
+      "yahoo",
+      "hotmail",
+      "ymail",
+      "msn",
+      "icloud",
+      "apple",
+      "outlook",
+      "aol",
+      "cox",
+      "yandex"
+    ];
+    let extractedCompanyWithDotCom = email.split("@");
+    let extractedCompanyArray = extractedCompanyWithDotCom[1].split(".");
+    let extractedCompany = extractedCompanyArray[0];
+    if (genericEmailsArray.includes(extractedCompany)) {
+      // In Test:
+      // console.log('generic company');
+
+      // In production
+      return "godaddy";
+    } else {
+      // In Test:
+      // console.log(extractedCompany);
+
+      // In Production:
+      return extractedCompany;
+    }
+  } else {
+    return email;
+  }
+}
 
 // function checkForCompany(req){
 //     if(req.company){
