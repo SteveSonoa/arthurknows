@@ -2,8 +2,8 @@ import axios from "axios";
 
 export default {
   // Gets all books
-  postBing: function(fName, lName, company) {
-    return axios.post("/api/search", fName, lName, company);
+  postBing: function(searchData) {
+    return axios.post("/api/search", searchData);
   },
   // Gets the book with the given id
   getBook: function(id) {

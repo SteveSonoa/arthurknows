@@ -8,6 +8,7 @@ import ReactBootstrapSlider from 'react-bootstrap-slider';
 import BootstrapSlider from 'bootstrap-slider/dist/css/bootstrap-slider.min.css';
 import Calendar from '../Calendar';
 
+
 class Settings extends React.Component {
 	constructor (props) {
 		super(props);

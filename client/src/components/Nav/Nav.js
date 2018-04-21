@@ -6,7 +6,7 @@ import profileData from "../../pages/Profile/profileData.json";
 const Nav = () => (
   <div className="container-fluid">
     <div className="navbar-logo">
-      <a id="navbar-logo" >Logo</a>
+      <img src="/img/cornerLogo.png" id="navbar-logo" className="img img-responsive" />
     </div>
 
     <div className="navbar-menu">

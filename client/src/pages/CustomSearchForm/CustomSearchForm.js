@@ -1,12 +1,12 @@
 import React from "react";
 
-const CustomSearchForm = props =>
+const CustomSearchForm = props =>(
   <form>
     <div className="form-group">
       <label htmlFor="fistName">First Name:</label>
       <input
         onChange={props.handleInputChange}
-        value={props.value}
+        value={props.value.firstName}
         name="firstName"
         type="text"
         className="form-control"
@@ -16,7 +16,7 @@ const CustomSearchForm = props =>
        <label htmlFor="lastName">Last Name:</label>
       <input
         onChange={props.handleInputChange}
-        value={props.value}
+        value={props.value.lastName}
         name="lastName"
         type="text"
         className="form-control"
@@ -26,7 +26,7 @@ const CustomSearchForm = props =>
        <label htmlFor="company">Company:</label>
       <input
         onChange={props.handleInputChange}
-        value={props.value}
+        value={props.value.company}
         name="company"
         type="text"
         className="form-control"
@@ -36,7 +36,7 @@ const CustomSearchForm = props =>
        <label htmlFor="Twitter Handle">Twitter Handle:</label>
       <input
         onChange={props.handleInputChange}
-        value={props.value}
+        value={props.value.twitterHandle}
         name="twitterHandle"
         type="text"
         className="form-control"
@@ -48,4 +48,8 @@ const CustomSearchForm = props =>
         Search
       </button>
     </div>
-  </form>;
+  </form>
+
+);
+  
+  export default CustomSearchForm;

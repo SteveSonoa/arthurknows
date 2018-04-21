@@ -4,7 +4,7 @@ const LocalNews = require("../models/localNews.js");
 
 module.exports = {
   searchPerson: function(req, res) {
-    console.log(req.body);
+    console.log("@@@@@@@@@@", req.body);
 
     let company = emailHandler(req.body.company);
 

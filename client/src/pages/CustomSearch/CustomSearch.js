@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Panel from "../../components/Panel";
 import { Col, Row, Container } from "../../components/Grid";
 import CustomSearchForm from "../CustomSearchForm";
+import { Link, withRouter} from "react-router-dom"; 
+import API from "../../utils/API";
+
 
 
 class CustomSearch extends Component {
@@ -18,7 +21,10 @@ class CustomSearch extends Component {
     }
   
    sendToAPI = formData => {
-        console.log(formData);
+        console.log(formData.firstName);
+        console.log(formData.lastName);
+        console.log(formData.company);
+        API.postBing(formData);
    }
   
     handleInputChange = event => {
@@ -34,6 +40,13 @@ class CustomSearch extends Component {
       event.preventDefault();    
       this.sendToAPI(this.state);
 
+      this.setState({
+        firstName: "",
+        lastName: "",
+        company: "",
+        twitterHandle: ""
+      });
+
     //   Route to /prep
     };
   
@@ -41,9 +54,9 @@ class CustomSearch extends Component {
       return (
         <Container>
           <Row>
-            <Col size="md-8">
+            {/* <Col size="md-8"> */}
            
-            </Col>
+            {/* </Col> */}
             <Col size="md-4">
               <Panel heading="Search">
                 <CustomSearchForm
@@ -58,3 +71,5 @@ class CustomSearch extends Component {
       );
     }
   }
+
+  export default CustomSearch;
