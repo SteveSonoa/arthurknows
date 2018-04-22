@@ -22,7 +22,7 @@ mongoose.connect(
   // process.env.MONGODB_URI || "mongodb://localhost/arthur"
 
   // Test:
-  "mongodb://localhost/arthur"
+  var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/arthur"
 
 );
 
