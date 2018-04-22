@@ -23,7 +23,7 @@ class Login extends React.Component {
 		console.log('properties in Login.js', this.props);
 	}
 
- 
+
 	googleSuccessResponse = (res) => {
 		let that = this;
 		console.log('response', res);
@@ -31,13 +31,30 @@ class Login extends React.Component {
 		Api.verifyToken(res.tokenId)
 			.then(( data ) => {
 				AuthService.authorize(true);
-	      		// Arrow functions preserve lexical this
-	      		this.props.updateUserDetails(res.profileObj);
-	     		this.props.history.push('/settings');
+	      	// Arrow functions preserve lexical this
+					this.fetchUserDetailsHandler(res.profileObj);
 			});
 	}
 
 	googleErrorResponse = (res) => {
+	}
+
+	fetchUserDetailsHandler = async (userDetails) => {
+		const details = {
+			firstName: userDetails.givenName,
+			lastName: userDetails.familyName,
+			myEmail: userDetails.email,
+			userId: userDetails.googleId
+		}
+
+		try {
+			const result = await Api.fetchUserDetailsOrCreate(details)
+			console.log('results', result);
+			this.props.updateUserDetails(result.data)
+			this.props.history.push('/settings');
+		} catch (e) {
+			alert('There was an issue in fetch user details handler', e)
+		}
 	}
 
 	render () {

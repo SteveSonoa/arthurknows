@@ -55,7 +55,7 @@ class App extends Component {
 										<Login updateUserDetails={this.updateUserDetails} updatePage={this.updatePage} />
 									} />
 									<Route path="/settings" render = { () =>
-										<Settings updatePage={this.updatePage} />
+										<Settings profileData={this.state.userDetails} updatePage={this.updatePage} />
 									} />
 									<Route exact path="/search/weekly" render = { () =>
 										<Weekly updatePage={this.updatePage} />
@@ -93,7 +93,7 @@ class App extends Component {
 									} />
 									<Route exact path="/faq" render = { () =>
 										<FAQ updatePage={this.updatePage} />
-									} />									
+									} />
 									<Route exact path="/privacy" render = { () =>
 										<Privacy updatePage={this.updatePage} />
 									} />

@@ -1,6 +1,6 @@
 const db = require("../models");
 
-// Defining methods for the booksController
+// Defining methods for the userController
 module.exports = {
   findAll: function(req, res) {
     db.User
@@ -38,6 +38,26 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  async fetchOrCreateUser (req, res) {
+    try {
+      const user = await db.User.findOne({ userId: req.params.id });
+      if (user) {
+        console.log('We found a user in fetchOrCreate!');
+        res.json(user);
+      } else {
+        throw new Error('no user found!');
+      }
+    } catch (e) {
+      try {
+        const result = await db.User.create(req.body);
+        console.log('User created!', result);
+        res.json(result);
+      } catch (e) {
+        console.log('There was an issue in fetchOrCreateUser', e);
+        res.status(500).json('Could not find or create user')
+      }
+    }
+  },
   async remove (req, res) {
     try {
       const result = await db.User.findOne({ userId: req.params.id })
@@ -54,20 +74,25 @@ module.exports = {
     } catch (err) {
       res.status(500).json('Could not find a user to remove');
     }
-      
+
       // .then(dbModel => dbModel.remove())
       // .then(dbModel => res.json(dbModel))
       // .catch(err => res.status(422).json(err));
   },
   async createOrUpdate (req, res) {
+    console.log('create or update initialised', req.params.id);
     const _id = req.params.id;
     try {
       const result = await db.User.findOneAndUpdate({ userId: _id }, req.body)
+      console.log('in the result', result);
       if (result) {
         res.json(result);
+      } else {
+        throw new Error('user not found');
       }
     } catch (err) {
       try {
+        console.log('trying to create a user!');
         // res.json(this);
         db.User
           .create(req.body)
@@ -142,4 +167,4 @@ module.exports = {
 // }
 
 // db.User.remove({})
-//                     
+//

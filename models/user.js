@@ -35,8 +35,8 @@ var UserSchema = new Schema({
   // `myCompany` is a required field and throws a custom error message if not supplied
   myCompany: {
     type: String,
-    trim: true,
-    required: "Company is Required"
+    trim: true
+    // required: "Company is Required"
   },
   // `myTitle` must be of type String
   // `myTitle` will trim leading and trailing whitespace before it's saved
@@ -51,20 +51,19 @@ var UserSchema = new Schema({
   myEmail: {
     type: String,
     unique: true,
-    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+    match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
+    required: 'Please enter an e-mail address'
   },
 
   // myGender` will trim leading and trailing whitespace before it's saved
-  
+
   myGender: {
     type: String,
-    trim: true,
-    
+    trim: true
   },
 // `date of birth` must be of type Date. The default value is the current date
   myDob: {
-    type: Date,
-    
+    type: Date
   },
   // `billingtier` must be of type String
   // `billingtier` will trim leading and trailing whitespace before it's saved
@@ -76,7 +75,7 @@ var UserSchema = new Schema({
 // `sarcasm` must be of type Number
     sarcasm: {
     type: Number,
-    default: 0,
+    default: 0
   },
 
   // `date` must be of type Date. The default value is the current date

@@ -25,43 +25,17 @@ class Profile extends React.Component {
 
 	componentWillMount() {
 		console.log('in will mount', this.state);
-
-		this.fetchUserData();
 		this.setState({
-			myEmail: this.props.profileData.email,
-			userId: this.props.profileData.googleId,
-			firstName: this.props.profileData.givenName,
-			lastName: this.props.profileData.familyName
+			...this.props.profileData
 		});
-		if (this.props.profileData.googleId) {			
-			console.log('setting user details', this.state);
-			localStorage.setItem('userDetails', this.state);
-		} else {
-			const userDetails = localStorage.getItem('userDetails');
-			console.log('Getting user details ', userDetails);
-			this.setState({...userDetails});
-		}
-	}
-
-	componentDidMount() {
-		console.log('In profile.js - props: ', this.props);
-		console.log('in did mount state ', this.state);
-	}
-
-	fetchUserData = async () => {
-		const id = this.props.profileData.googleId;
-		console.log('in fetch user', id);
-		try {
-			const userDetails = await API.getUser(id).then(resp => resp.data);
-			console.log('we have a user', userDetails);
-			this.setState(prevState => ({
-				prevState,
-				...userDetails
-			}));
-			console.log('state after getting a user', this.state);
-		} catch (err) {
-			console.error('Could not fetch a user with id ' + id, err)
-		}
+		// if (this.props.profileData.googleId) {
+		// 	console.log('setting user details', this.state);
+		// 	localStorage.setItem('userDetails', this.state);
+		// } else {
+		// 	const userDetails = localStorage.getItem('userDetails');
+		// 	console.log('Getting user details ', userDetails);
+		// 	this.setState({...userDetails});
+		// }
 	}
 
 	onChangeHandler = (value, field) => {
@@ -74,12 +48,14 @@ class Profile extends React.Component {
 
 	saveProfileHandler = async (e) => {
 		e.preventDefault();
-		console.log('save profile handler initialised', this.state);
+		console.log('save profile handler initialized', this.state);
 		try {
 			const result = await API.saveUser(this.state);
 			console.log('saveProfileHandler - result: ', result);
+			alert('Your profile has been saved!');
 		} catch (e) {
 			console.error('Error in saveProfileHandler: ', e);
+			alert('There was a problem while trying to save your profile.');
 		}
 	};
 
@@ -88,8 +64,10 @@ class Profile extends React.Component {
 		try {
 			const result = await API.deleteUser(this.state.userId)
 			console.log('delete profile', result);
+			alert('Your profile has been deleted successfully!');
 		} catch (e) {
 			console.error('Error in deleteProfileHandler', e);
+			alert('There was a problem while trying to delete your profile');
 		}
 	}
 
@@ -104,50 +82,50 @@ class Profile extends React.Component {
 							<form className="form-horizontal">
 								<div className="form-group col-xs-9 col-sm-9 col-md-9 col-lg-9">
 									<label for="firstName">First Name</label>
-									<input 
-										type="text" 
-										onChange={e => { this.onChangeHandler(e.target.value, 'firstName') }} 
-										className="form-control" 
-										id="firstName" 
-										value={this.state.firstName} 
+									<input
+										type="text"
+										onChange={e => { this.onChangeHandler(e.target.value, 'firstName') }}
+										className="form-control"
+										id="firstName"
+										value={this.state.firstName}
 										placeholder="First Name" />
 								</div>
 								<div className="form-group col-xs-9 col-sm-9 col-md-9 col-lg-9">
 									<label for="firstName">Last Name</label>
-									<input 
-										type="text" 
-										onChange={e => { this.onChangeHandler(e.target.value, 'lastName') }} 
-										className="form-control" id="lastName" 
-										value={this.state.lastName} 
+									<input
+										type="text"
+										onChange={e => { this.onChangeHandler(e.target.value, 'lastName') }}
+										className="form-control" id="lastName"
+										value={this.state.lastName}
 										placeholder="Last Name" />
 								</div>
 								<div className="form-group col-xs-3 col-sm-3 col-md-3 col-lg-3">
 									<label for="myDob">DoB</label>
-									<input 
-										type="text" 
-										onChange={e => { this.onChangeHandler(e.target.value, 'myDob') }} 
-										className="form-control" 
-										id="myDob" 
-										value={this.state.myDob} 
+									<input
+										type="text"
+										onChange={e => { this.onChangeHandler(e.target.value, 'myDob') }}
+										className="form-control"
+										id="myDob"
+										value={this.state.myDob}
 										placeholder="MM/DD/YYYY" />
 								</div>
 
 								<div className="form-group col-xs-9 col-sm-9 col-md-9 col-lg-9">
 									<label for="myEmail">Email Address</label>
-									<input 
-										type="email" 
-										onChange={e => { this.onChangeHandler(e.target.value, 'myEmail') }} 
-										className="form-control" 
-										id="myEmail" 
-										value={this.state.myEmail} 
+									<input
+										type="email"
+										onChange={e => { this.onChangeHandler(e.target.value, 'myEmail') }}
+										className="form-control"
+										id="myEmail"
+										value={this.state.myEmail}
 										placeholder="me@example.com" />
 								</div>
 								<div className="form-group col-xs-3 col-sm-3 col-md-3 col-lg-3">
 									<label for="myGender">Gender</label>
-									<select 
-										className="form-control input" 
+									<select
+										className="form-control input"
 										onChange={e => { this.onChangeHandler(e.target.value, 'myGender') }}
-										value={this.state.myGender} 
+										value={this.state.myGender}
 										id="myGender">
 										<option></option>
 										<option value="male">Male</option>
@@ -158,34 +136,35 @@ class Profile extends React.Component {
 
 								<div className="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
 									<label for="myCompany">Company Name</label>
-									<input 
-										type="text" 
-										className="form-control col-xs-6 col-sm-6 col-md-6 col-lg-6" 
-										id="myCompany" 
-										value={this.state.company}
+									<input
+										type="text"
+										className="form-control col-xs-6 col-sm-6 col-md-6 col-lg-6"
+										id="myCompany"
 										onChange={e => { this.onChangeHandler(e.target.value, 'myCompany') }}
-										placeholder="(Optional)" />
+										value={this.state.myCompany}
+										placeholder="(Optional)"
+										/>
 								</div>
 
 								<div className="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
 									<label for="myTitle">Job Title</label>
-									<input 
-										type="text" 
-										className="form-control col-xs-6 col-sm-6 col-md-6 col-lg-6" 
-										id="myTitle" 
+									<input
+										type="text"
+										className="form-control col-xs-6 col-sm-6 col-md-6 col-lg-6"
+										id="myTitle"
 										onChange={e => { this.onChangeHandler(e.target.value, 'myTitle') }}
-										value={this.state.myTitle} 
+										value={this.state.myTitle}
 										placeholder="(Optional)" />
 								</div>
 
 								<div>
-									<button 
+									<button
 										onClick={this.saveProfileHandler}
 										className="btn btn-success col-xs-6 col-sm-6 col-md-6 col-lg-6">Save Changes</button>
 								</div>
 								<div>
-									<button 
-										type="reset" 
+									<button
+										type="reset"
 										onClick={this.deleteProfileHandler}
 										className="btn btn-danger col-xs-6 col-sm-6 col-md-6 col-lg-6">Delete My Profile</button>
 								</div>

@@ -28,5 +28,8 @@ export default {
   },
   deleteUser (id) {
     return axios.delete(`/api/user/${id}`)
+  },
+  fetchUserDetailsOrCreate(data) {
+    return axios.post(`/api/user/${data.userId}`, data);
   }
 };
