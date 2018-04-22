@@ -16,19 +16,25 @@ import Privacy from "./pages/Privacy";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import { Col, Row, Container } from "./components/Grid";
-import profileData from "./pages/Profile/profileData.json";
+// import profileData from "./pages/Profile/profileData.json";
 import SecretRoute from './pages/Settings';
 import CustomSearch from './pages/CustomSearch';
 
 class App extends Component {
 
 	state = {
-		page: "Login"
+		page: "Login",
+		userDetails: {}
 	};
 
 	updatePage = (pageName) => {
 		this.setState({page: pageName});
 	};
+
+	updateUserDetails = userDetails => {
+		console.log('updating user details', userDetails);
+		this.setState({userDetails});
+	}
 
 	render() {
 		return (
@@ -46,7 +52,7 @@ class App extends Component {
 							<Col size="md-8 sm-12">
 								<Switch>
 									<Route exact path="/" render = { () =>
-										<Login updatePage={this.updatePage} />
+										<Login updateUserDetails={this.updateUserDetails} updatePage={this.updatePage} />
 									} />
 									<Route path="/settings" render = { () =>
 										<Settings updatePage={this.updatePage} />
@@ -68,7 +74,7 @@ class App extends Component {
 										<Results updatePage={this.updatePage} />
 									} />
 									<Route exact path="/profile" render = { () =>
-										<Profile profileData={profileData} updatePage={this.updatePage} />
+										<Profile profileData={this.state.userDetails} updatePage={this.updatePage} />
 									} />
 									<Route exact path="/about" render = { () =>
 										<About updatePage={this.updatePage} />

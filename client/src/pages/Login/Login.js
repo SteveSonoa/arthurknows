@@ -19,16 +19,22 @@ class Login extends React.Component {
 		this.props.updatePage('Login');
 	}
 
+	componentDidMount() {
+		console.log('properties in Login.js', this.props);
+	}
+
  
 	googleSuccessResponse = (res) => {
 		let that = this;
-		Api.verifyToken(res.tokenId).then(( data ) => {
-			AuthService.authorize(true);
-			console.log(data);
-      // Arrow functions preserve lexical this
-      
-     	this.props.history.push('/settings');
-		})
+		console.log('response', res);
+		console.log('response', res.profileObj);
+		Api.verifyToken(res.tokenId)
+			.then(( data ) => {
+				AuthService.authorize(true);
+	      		// Arrow functions preserve lexical this
+	      		this.props.updateUserDetails(res.profileObj);
+	     		this.props.history.push('/settings');
+			});
 	}
 
 	googleErrorResponse = (res) => {

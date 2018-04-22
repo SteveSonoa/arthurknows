@@ -25,6 +25,11 @@ var UserSchema = new Schema({
     trim: true,
     required: "Last Name is Required"
   },
+  userId: {
+    type: String,
+    trim: true,
+    required: 'User Id is Required'
+  },
   // `myCompany` must be of type String
   // `myCompany` will trim leading and trailing whitespace before it's saved
   // `myCompany` is a required field and throws a custom error message if not supplied
@@ -57,7 +62,7 @@ var UserSchema = new Schema({
     
   },
 // `date of birth` must be of type Date. The default value is the current date
-  DoB: {
+  myDob: {
     type: Date,
     
   },
