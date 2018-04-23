@@ -1,6 +1,6 @@
 import React from "react";
 import Panel from "../../components/Panel";
-import { Col, Row, Container } from "../../components/Grid";
+// import { Col, Row, Container } from "../../components/Grid";
 import "./Privacy.css";
 
 class Privacy extends React.Component {

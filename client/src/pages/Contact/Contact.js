@@ -2,7 +2,7 @@ import React from "react";
 import Panel from "../../components/Panel";
 import { Col, Row, Container } from "../../components/Grid";
 import "./Contact.css";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class Contact extends React.Component {
 	constructor (props) {

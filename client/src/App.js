@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Books from "./pages/Books";
-import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Arthur from "./pages/Arthur";
 import Results from "./pages/Results";
@@ -17,7 +15,7 @@ import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import { Col, Row, Container } from "./components/Grid";
 // import profileData from "./pages/Profile/profileData.json";
-import SecretRoute from './pages/Settings';
+// import SecretRoute from './pages/Settings';
 import CustomSearch from './pages/CustomSearch';
 
 class App extends Component {

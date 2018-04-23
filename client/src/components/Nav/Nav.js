@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Nav.css";
-import profileData from "../../pages/Profile/profileData.json";
+// import profileData from "../../pages/Profile/profileData.json";
 
 const Nav = () => (
   <div className="container-fluid">
     <div className="navbar-logo">
-      <img src="/img/cornerLogo.png" id="navbar-logo" className="img img-responsive" />
+      <img src="/img/cornerLogo.png" id="navbar-logo" className="img img-responsive" alt="Arthur" />
     </div>
 
     <div className="navbar-menu">

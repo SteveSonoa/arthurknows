@@ -19,7 +19,7 @@ mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 mongoose.connect(
   // Production:
-  process.env.MONGODB_URI || "mongodb://localhost/arthur"
+  process.env.MONGODB_URI || "mongodb://localhost:21017/arthur"
 
   // Test:
   //"mongodb://localhost/arthur"

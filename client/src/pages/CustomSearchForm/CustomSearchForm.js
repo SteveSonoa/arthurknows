@@ -13,6 +13,8 @@ const CustomSearchForm = props =>(
         placeholder="First Name"
         id="firstName"
       />
+    </div>
+    <div className="form-group">
        <label htmlFor="lastName">Last Name:</label>
       <input
         onChange={props.handleInputChange}
@@ -23,6 +25,8 @@ const CustomSearchForm = props =>(
         placeholder="Last Name"
         id="lastName"
       />
+    </div>
+    <div className="form-group">      
        <label htmlFor="company">Company:</label>
       <input
         onChange={props.handleInputChange}
@@ -33,6 +37,8 @@ const CustomSearchForm = props =>(
         placeholder="Company"
         id="company"
       />
+    </div>
+    <div className="form-group">      
        <label htmlFor="Twitter Handle">Twitter Handle:</label>
       <input
         onChange={props.handleInputChange}
@@ -43,8 +49,9 @@ const CustomSearchForm = props =>(
         placeholder="Twitter Handle"
         id="twitterHandle"
       />
-      <br />
-      <button onClick={props.handleFormSubmit} className="btn btn-primary">
+    </div>
+    <div className="form-group">
+      <button onClick={props.handleFormSubmit} className="btn btn-primary center-block">
         Search
       </button>
     </div>

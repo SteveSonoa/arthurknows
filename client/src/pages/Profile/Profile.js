@@ -2,8 +2,8 @@ import React from "react";
 import Panel from "../../components/Panel";
 import { Col, Row, Container } from "../../components/Grid";
 import "./Profile.css";
-import { Link } from 'react-router-dom';
-import profileData from "./profileData.json";
+// import { Link } from 'react-router-dom';
+// import profileData from "./profileData.json";
 import API from '../../utils/API';
 
 class Profile extends React.Component {
@@ -80,50 +80,53 @@ class Profile extends React.Component {
 						<Col size="lg-12 md-12 sm-12 xs-12">
 							<h1>My Profile</h1>
 							<form className="form-horizontal">
-								<div className="form-group col-xs-9 col-sm-9 col-md-9 col-lg-9">
-									<label for="firstName">First Name</label>
+								<div className="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+									<label htmlFor="firstName">First Name</label>
 									<input
 										type="text"
 										onChange={e => { this.onChangeHandler(e.target.value, 'firstName') }}
-										className="form-control"
+										className="form-control col-xs-12 col-sm-12 col-md-6 col-lg-6"
 										id="firstName"
 										value={this.state.firstName}
 										placeholder="First Name" />
 								</div>
-								<div className="form-group col-xs-9 col-sm-9 col-md-9 col-lg-9">
-									<label for="firstName">Last Name</label>
+								<div className="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+									<label htmlFor="firstName">Last Name</label>
 									<input
 										type="text"
 										onChange={e => { this.onChangeHandler(e.target.value, 'lastName') }}
-										className="form-control" id="lastName"
+										className="form-control col-xs-12 col-sm-12 col-md-6 col-lg-6" id="lastName"
 										value={this.state.lastName}
 										placeholder="Last Name" />
 								</div>
-								<div className="form-group col-xs-3 col-sm-3 col-md-3 col-lg-3">
-									<label for="myDob">DoB</label>
+
+								<div className="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									<label htmlFor="myEmail">Email Address</label>
 									<input
-										type="text"
+										type="email"
+										onChange={e => { this.onChangeHandler(e.target.value, 'myEmail') }}
+										className="form-control col-xs-12 col-sm-12 col-md-12 col-lg-12"
+										id="myEmail"
+										value={this.state.myEmail}
+										placeholder="me@example.com" />
+								</div>
+
+								<div className="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label htmlFor="myDob">DoB</label>
+									<input
+										type="date"
 										onChange={e => { this.onChangeHandler(e.target.value, 'myDob') }}
-										className="form-control"
+										className="form-control col-xs-6 col-sm-6 col-md-6 col-lg-6"
 										id="myDob"
 										value={this.state.myDob}
 										placeholder="MM/DD/YYYY" />
 								</div>
 
-								<div className="form-group col-xs-9 col-sm-9 col-md-9 col-lg-9">
-									<label for="myEmail">Email Address</label>
-									<input
-										type="email"
-										onChange={e => { this.onChangeHandler(e.target.value, 'myEmail') }}
-										className="form-control"
-										id="myEmail"
-										value={this.state.myEmail}
-										placeholder="me@example.com" />
-								</div>
-								<div className="form-group col-xs-3 col-sm-3 col-md-3 col-lg-3">
-									<label for="myGender">Gender</label>
+
+								<div className="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+									<label htmlFor="myGender">Gender</label>
 									<select
-										className="form-control input"
+										className="form-control input col-xs-6 col-sm-6 col-md-6 col-lg-6"
 										onChange={e => { this.onChangeHandler(e.target.value, 'myGender') }}
 										value={this.state.myGender}
 										id="myGender">
@@ -135,7 +138,7 @@ class Profile extends React.Component {
 								</div>
 
 								<div className="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
-									<label for="myCompany">Company Name</label>
+									<label htmlFor="myCompany">Company Name</label>
 									<input
 										type="text"
 										className="form-control col-xs-6 col-sm-6 col-md-6 col-lg-6"
@@ -147,7 +150,7 @@ class Profile extends React.Component {
 								</div>
 
 								<div className="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
-									<label for="myTitle">Job Title</label>
+									<label htmlFor="myTitle">Job Title</label>
 									<input
 										type="text"
 										className="form-control col-xs-6 col-sm-6 col-md-6 col-lg-6"

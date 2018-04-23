@@ -25,7 +25,7 @@ class Login extends React.Component {
 
 
 	googleSuccessResponse = (res) => {
-		let that = this;
+//		let that = this;
 		console.log('response', res);
 		console.log('response', res.profileObj);
 		Api.verifyToken(res.tokenId)

@@ -1,15 +1,15 @@
 import React from "react";
 import Panel from "../../components/Panel";
 import { Col, Row, Container } from "../../components/Grid";
-import { Personal, Headlines, Posts, Shared, Twitter } from "../../components/Results";
+import { Personal, Headlines, Twitter } from "../../components/Results";
 import "./Results.css";
-import headlinesData from "../../components/Results/data/headlines.json";
+// import headlinesData from "../../components/Results/data/headlines.json";
 import linkedinData from "../../components/Results/data/linkedin.json";
-import postsCompanyData from "../../components/Results/data/postsCompany.json";
-import postsPersonData from "../../components/Results/data/postsPerson.json";
-import sharedData from "../../components/Results/data/shared.json";
-import twitterData from "../../components/Results/data/twitter.json";
-import CalendarActivities from '../../utils/data';
+// import postsCompanyData from "../../components/Results/data/postsCompany.json";
+// import postsPersonData from "../../components/Results/data/postsPerson.json";
+// import sharedData from "../../components/Results/data/shared.json";
+// import twitterData from "../../components/Results/data/twitter.json";
+// import CalendarActivities from '../../utils/data';
 
 // PROPS INCLUDES THE FOLLOWING:
 	// resultHeadlines: [],

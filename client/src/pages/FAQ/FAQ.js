@@ -2,7 +2,7 @@ import React from "react";
 import Panel from "../../components/Panel";
 import { Col, Row, Container } from "../../components/Grid";
 import "./FAQ.css";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 const FAQ = props => (

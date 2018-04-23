@@ -2,7 +2,7 @@ import React from "react";
 import Panel from "../../components/Panel";
 import { Col, Row, Container } from "../../components/Grid";
 import "./Settings.css";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // import profileData from "../Profile/profileData.json";
 import ReactBootstrapSlider from 'react-bootstrap-slider';
 import BootstrapSlider from 'bootstrap-slider/dist/css/bootstrap-slider.min.css';
@@ -20,7 +20,7 @@ class Settings extends React.Component {
 	}
 
 	componentWillMount() {
-		const { profileData } = this.props
+		// const { profileData } = this.props
 		this.setState(prevState => ({
 			...prevState,
 			...this.props.profileData

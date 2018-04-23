@@ -1,7 +1,7 @@
 import React from "react";
 import "./Meetings.css";
 import { Link, withRouter} from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
+// import { Col, Row, Container } from "../../components/Grid";
 import CalendarActivities from '../../utils/data';
 import Moment from "moment";
 // const Meetings = props => (
