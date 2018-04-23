@@ -13,10 +13,11 @@ class Settings extends React.Component {
 	constructor (props) {
 		super(props);
 		this.props.updatePage('Settings');
+		setTimeout(this.props.updateArthurText, 500);
 	}
 
 	state = {
-		sarcasm: 0
+		sarcasm: 2
 	}
 
 	componentWillMount() {

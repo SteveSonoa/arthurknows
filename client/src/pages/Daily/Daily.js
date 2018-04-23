@@ -9,6 +9,7 @@ class Daily extends React.Component {
 	constructor (props) {
 		super(props);
 		this.props.updatePage('Daily');
+		setTimeout(this.props.updateArthurText, 500);
 	}
 
 	render () {

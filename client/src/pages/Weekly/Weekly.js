@@ -14,6 +14,7 @@ class Weekly extends React.Component {
 	constructor (props) {
 		super(props);
 		this.props.updatePage('Weekly');
+		setTimeout(this.props.updateArthurText, 500);
 	}
 
 	render () {

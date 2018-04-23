@@ -8,6 +8,7 @@ class Contact extends React.Component {
 	constructor (props) {
 		super(props);
 		this.props.updatePage('Contact');
+		setTimeout(this.props.updateArthurText, 500);
 	}
 
 	render () {

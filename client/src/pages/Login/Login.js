@@ -17,6 +17,7 @@ class Login extends React.Component {
 			login: false
 		}
 		this.props.updatePage('Login');
+		setTimeout(this.props.updateArthurText, 500);
 	}
 
 	componentDidMount() {

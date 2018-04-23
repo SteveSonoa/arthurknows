@@ -9,7 +9,7 @@ import linkedinData from "../../components/Results/data/linkedin.json";
 // import postsPersonData from "../../components/Results/data/postsPerson.json";
 // import sharedData from "../../components/Results/data/shared.json";
 // import twitterData from "../../components/Results/data/twitter.json";
-// import CalendarActivities from '../../utils/data';
+import CalendarActivities from '../../utils/data';
 
 // PROPS INCLUDES THE FOLLOWING:
 	// resultHeadlines: [],
@@ -17,9 +17,11 @@ import linkedinData from "../../components/Results/data/linkedin.json";
 	// resultProfile: {}
 
 class Results extends React.Component {
+
 	constructor (props) {
 		super(props);
 		this.props.updatePage('Results');
+		setTimeout(this.props.updateArthurText, 500);
 	}
 
 	render () {

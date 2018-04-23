@@ -10,6 +10,7 @@ class Profile extends React.Component {
 	constructor (props) {
 		super(props);
 		this.props.updatePage('Profile');
+		setTimeout(this.props.updateArthurText, 500);
 	}
 
 	state = {

@@ -17,7 +17,13 @@ class CustomSearch extends Component {
   
     // When this component mounts
     componentDidMount() {
-    //   might need to add something herer
+      // Might need to add something here eventually
+    }
+
+    constructor (props) {
+      super(props);
+      this.props.updatePage('Search');
+    setTimeout(this.props.updateArthurText, 500);
     }
   
    sendToAPI = formData => {
