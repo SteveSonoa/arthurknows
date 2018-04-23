@@ -15,7 +15,7 @@ module.exports = {
     })
       .populate("localnews")
       .then(dbResults => {
-        // console.log(dbResults)
+        console.log(dbResults);
         // let resultsArray = [];
 
         if (!dbResults == true && typeof dbResults == "object") {
