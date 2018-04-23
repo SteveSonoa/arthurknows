@@ -19,6 +19,17 @@ export default {
   },
   verifyToken: function (token) {
     return axios.post("/api/verify", { token }).then((res) => res);
+  },
+  saveUser (data) {
+    return axios.put(`/api/user/${data.userId}`, data);
+  },
+  getUser(id) {
+    return axios.get(`/api/user/${id}`);
+  },
+  deleteUser (id) {
+    return axios.delete(`/api/user/${id}`)
+  },
+  fetchUserDetailsOrCreate(data) {
+    return axios.post(`/api/user/${data.userId}`, data);
   }
-
 };
