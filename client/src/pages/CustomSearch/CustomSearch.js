@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import CustomSearchForm from "../CustomSearchForm";
 // import { Link, withRouter} from "react-router-dom"; 
 import API from "../../utils/API";
+import $ from "jquery";
 
 
 
@@ -27,12 +28,11 @@ class CustomSearch extends Component {
     }
   
    sendToAPI = formData => {
-        console.log(formData.firstName);
-        console.log(formData.lastName);
-        console.log(formData.company);
-        API.postBing(formData).then(data =>{
+        console.log(formData);
+        API.postBing(formData).then( (data) => {
+          console.log("Attempting to send data");
           console.log(data);
-        })
+        });
    }
   
     handleInputChange = event => {
@@ -45,15 +45,24 @@ class CustomSearch extends Component {
   
     // This function will need to be altered to hit the front end API or go to the temporary page
     handleFormSubmit = event => {
-      event.preventDefault();    
-      this.sendToAPI(this.state);
-
+      event.preventDefault();
       this.setState({
-        firstName: "",
-        lastName: "",
-        company: "",
-        twitterHandle: ""
+        firstName: $("#firstName").val().trim(),
+        lastName: $("#lastName").val().trim(),
+        company: $("#company").val().trim(),
+        twitterHandle: $("#twitterHandle").val().trim()
       });
+
+      setTimeout(this.sendToAPI, 500, this.state);
+
+      console.log(this.state);
+
+      // this.setState({
+      //   firstName: "",
+      //   lastName: "",
+      //   company: "",
+      //   twitterHandle: ""
+      // });
 
     //   Route to /prep
     };

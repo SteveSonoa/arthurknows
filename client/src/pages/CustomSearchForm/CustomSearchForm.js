@@ -3,7 +3,7 @@ import React from "react";
 const CustomSearchForm = props =>(
   <form>
     <div className="form-group">
-      <label htmlFor="fistName">First Name:</label>
+      <label htmlFor="firstName">First Name:</label>
       <input
         onChange={props.handleInputChange}
         value={props.value.firstName}
