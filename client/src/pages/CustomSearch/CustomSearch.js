@@ -1,23 +1,36 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Panel from "../../components/Panel";
 import { Col, Row, Container } from "../../components/Grid";
 import CustomSearchForm from "../CustomSearchForm";
-import { Link, withRouter} from "react-router-dom"; 
+// import { Link, withRouter} from "react-router-dom"; 
 import API from "../../utils/API";
 
-
-
-class CustomSearch extends Component {
+class CustomSearch extends React.Component {
     state = {    
       firstName: "",
       lastName: "",
       company: "",
       twitterHandle: ""
-    };
+    }
   
     // When this component mounts
     componentDidMount() {
-    //   might need to add something herer
+      // If props were passed in, fill in the default values
+      console.log(this.props);
+      console.log(this.state);
+      if(this.props.firstName) {
+        this.setState({
+          firstName: this.props.firstName,
+          lastName: this.props.lastName
+        });
+      }
+    }
+
+    constructor (props) {
+      super(props);
+      console.log(props);
+      this.props.updatePage('Search');
+      setTimeout(this.props.updateArthurText, 500);
     }
   
    sendToAPI = formData => {
@@ -54,13 +67,11 @@ class CustomSearch extends Component {
   
     render() {
       return (
-        <Container>
+        <Container fluid>
           <Row>
-            {/* <Col size="md-8"> */}
-           
-            {/* </Col> */}
-            <Col size="md-4">
+            <Col size="md-12">
               <Panel heading="Search">
+                <h1>Preparing Your Briefing</h1>
                 <CustomSearchForm
                   value={this.state}
                   handleInputChange={this.handleInputChange}

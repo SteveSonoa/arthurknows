@@ -17,6 +17,7 @@ class Login extends React.Component {
 			login: false
 		}
 		this.props.updatePage('Login');
+		setTimeout(this.props.updateArthurText, 500);
 	}
 
 	componentDidMount() {
@@ -25,7 +26,7 @@ class Login extends React.Component {
 
 
 	googleSuccessResponse = (res) => {
-		let that = this;
+//		let that = this;
 		console.log('response', res);
 		console.log('response', res.profileObj);
 		Api.verifyToken(res.tokenId)

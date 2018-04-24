@@ -73,7 +73,7 @@ var UserSchema = new Schema({
     default: "Free Trial",
   },
 // `sarcasm` must be of type Number
-    sarcasm: {
+  sarcasm: {
     type: Number,
     default: 0
   },

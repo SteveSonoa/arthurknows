@@ -1,48 +1,349 @@
 [
 	{
-		"date": "December 1, 1942",
-		"meetings": [
-		 	{
-		 		"title": "Living In Infamy",
-		 		"participants": [
-			 	 	{ "name": "Franklin Roosevelt",
-			 	 	 "email": "potus@whitehouse.gov"
-			 	 	},
-			 	 	{ "name": "John Voigt",
-			 	 	 "email": "john@meetup.com"
-			 	 	}
-		 		]
-		 	},
+		"attendees": [
 			{
-		 		"title": "Bombing",
-		 		"participants": [
-			 	 	{ "name": "The Dude",
-			 	 	 "email": "potus@whitehouse.gov"
-			 	 	},
-			 	 	{ "name": "John Smith",
-			 	 	 "email": "johnsmith@meetup.com"
-			 	 	}
-		 		]
-		 	}
-		]
-	},
-	{
-		"date": "April 20, 2018",
-		"meetings": [
+				"_id": "54759eb3c090d83494e2d804",
+				"firstName": "Steve",
+				"lastName": "Marshall",
+				"email": "stevesonoa@gmail.com",
+				"company": "State Farm",
+				"linkedin": "https://www.linkedin.com/in/sonoa/",
+				"image": "https://pbs.twimg.com/profile_images/949319390868074498/ZKWEC-MT_400x400.jpg",
+				"title": "Complex Auto Claims Specialist",
+				"description": "At State Farm®, our mission is to help people manage the risks of everyday life, recover from the unexpected, and realize their dreams. We are passionate and driven to create possibilities, and we’re serious about being here to help life go right™ for customers by providing solutions for all of life’s moments.",
+				"twitter": ["949323672887615488", "949323621809319936", "949323544080482304"],
+				"headlines": [
+					{
+						"headline": "Taking Stock of Your Belongings for the Future",
+						"blurb": "Making a record of your possessions can prove useful for insurance purposes or planning a move, and you can find plenty of apps to help with the job.",
+						"url": "https://www.nytimes.com/2018/03/05/technology/personaltech/insurance-belongings.html"
+					},
+					{
+						"headline": "Why Driving Fewer Miles May Not Lead to Lower Auto Premiums",
+						"blurb": "People who don't drive much usually get in fewer accidents. But, a study finds, insurers typically emphasize a driver's marital status or credit score.",
+						"url": "https://www.nytimes.com/2018/03/02/your-money/driving-fewer-miles-may-not-lower-auto-premiums.html"
+					},
+					{
+						"headline": "Kazakhstan Prizes Its Cowboys, but Few Want to Saddle Up for Harsh Life",
+						"blurb": "Kazakh cowboys, while proud of providing their rapidly modernizing nation with a link to its nomadic past, rarely want their children to follow them onto the frigid steppes.",
+						"url": "https://www.nytimes.com/2017/12/30/world/asia/kazakhstan-cowboys.html"
+					}
+				]
+			},
 			{
-				"title": "Fix The Bugs!",
-				"participants": [
-					{ "name": "Steve Marshall",
-					 "email": "stevesonoa@gmail.com"
+				"_id": "54759eb3c090d83494e2d186",
+				"firstName": "Holly",
+				"lastName": "Zoba",
+				"email": "hollyzoba@gmail.com",
+				"company": "Hospitality Digital Marketing",
+				"linkedin": "https://www.linkedin.com/in/hollyzoba/",
+				"image": "https://pbs.twimg.com/profile_images/156228635/scouthollyfeb_400x400.jpg",
+				"title": "Vice President, Technology Resources",
+				"description": "Learn how to bring your guests and marketing efforts into balance. Use what digital tools you need, rather than what someone is selling. Create strategies that allow you down to a property level look good and feel connected to exactly the guests that want your location when they want it.",
+				"twitter": ["984854442473213952", "979456604075511808", "976691316384919552"],
+				"headlines": [
+					{
+						"headline": "News | Hospitality Digital Marketing",
+						"blurb": "I was a judge for the 2016 Social Media Awards in HOTELS Magazine's October Edition . For the complete article click HERE",
+						"url": "https://www.nytimes.com/2018/03/05/technology/personaltech/insurance-belongings.html"
 					},
-					{ "name": "Holly Zorba",
-					 "email": "hzoba@gmail.com"
+					{
+						"headline": "Digital marketing drives hospitality industry, but personal connections are still vital",
+						"blurb": "In the second installment of the “Back to the Future” series, Marty, the unsuspecting time traveler, is propelled to the (then) futuristic year of 2015, where he encounters such advanced technology as holographic billboards and advertisements. Now, a couple of years later, holograms aren’t a steady component of digital marketing. However, we may not be too far off the mark.",
+						"url": "https://azbigmedia.com/digital-marketing-hospitality-industry-hsmai/"
 					},
-					{ "name": "Eric Tenenbaum",
-					 "email": "eric-tenenbaum@gmail.com"
+					{
+						"headline": "Hotel Digital Marketing Benchmarks",
+						"blurb": "Access the power of benchmarking in your quest to understand the performance of your digital marketing, and your position within the industry. HSMAI’s Digital Marketing Benchmarks, a project of HSMAI’s Digital Marketing Council, will help you gauge your competitive position on a wide variety of topics that are top of mind for all hoteliers in today’s fast moving environment.",
+						"url": "https://www.hsmai.org/benchmarking"
+					}
+				]
+			},
+			{
+				"_id": "54759eb3c090d83494e2d355",
+				"firstName": "Eric",
+				"lastName": "Tenenbaum",
+				"email": "erictenenbaum10@gmail.com",
+				"company": "Coding With Kids",
+				"linkedin": "https://www.linkedin.com/in/eric-tenenbaum/",
+				"image": "https://pbs.twimg.com/profile_images/2346624771/jyzukobby3738wocxj1b_400x400.jpeg",
+				"title": "Computer Programming Instructor",
+				"description": "Coding with Kids teaches computer programming to elementary and middle school children. We offer after-school enrichment classes, classes in education centers, camps, and Kid's Code-a-thons. We offer multi-year curriculum that will take students from the beginnings of computer science to the master-ship of software development.",
+				"twitter": ["289114093636419584"],
+				"headlines": [
+					{
+						"headline": "Coding with Kids",
+						"blurb": "Looking for a new activity for the family? You may be impressed with your family's abilities if you start coding with the kids!",
+						"url": "https://motivislearning.com/insights/family-coding-night/"
+					},
+					{
+						"headline": "New After School Program: Coding With Kids!!",
+						"blurb": "Jump start your child’s STEAM education with Coding with Kids’ Little Coders class! Students will develop their computational thinking skills and build their own creative programs.",
+						"url": "http://zilkerelem.org/new-after-school-program-coding-with-kids/"
+					},
+					{
+						"headline": "Coding With Kids: Six Secrets to Teaching Children to Program",
+						"blurb": "Programming education has become a lot more mainstream in the past few decades, but much of the materials are still targeted at middle school and high school audiences. What if you've got younger children and you don't want to wait to teach them how to make software? Well, I say you don't have to!",
+						"url": "https://blog.newrelic.com/2016/12/23/programing-with-kids/"
 					}
 				]
 			}
-		]
-	}
+		],
+		"dateTime": "2018-04-24T12:00:00-07:00",
+		"summary": "Final Project Walkthrough"
+	},
+	{
+		"attendees": [
+			{
+				"_id": "54759eb3c090d83494e2d804",
+				"firstName": "Steve",
+				"lastName": "Marshall",
+				"email": "stevesonoa@gmail.com",
+				"company": "State Farm",
+				"linkedin": "https://www.linkedin.com/in/sonoa/",
+				"image": "https://pbs.twimg.com/profile_images/949319390868074498/ZKWEC-MT_400x400.jpg",
+				"title": "Complex Auto Claims Specialist",
+				"description": "At State Farm®, our mission is to help people manage the risks of everyday life, recover from the unexpected, and realize their dreams. We are passionate and driven to create possibilities, and we’re serious about being here to help life go right™ for customers by providing solutions for all of life’s moments.",
+				"twitter": ["949323672887615488", "949323621809319936", "949323544080482304"],
+				"headlines": [
+					{
+						"headline": "Taking Stock of Your Belongings for the Future",
+						"blurb": "Making a record of your possessions can prove useful for insurance purposes or planning a move, and you can find plenty of apps to help with the job.",
+						"url": "https://www.nytimes.com/2018/03/05/technology/personaltech/insurance-belongings.html"
+					},
+					{
+						"headline": "Why Driving Fewer Miles May Not Lead to Lower Auto Premiums",
+						"blurb": "People who don't drive much usually get in fewer accidents. But, a study finds, insurers typically emphasize a driver's marital status or credit score.",
+						"url": "https://www.nytimes.com/2018/03/02/your-money/driving-fewer-miles-may-not-lower-auto-premiums.html"
+					},
+					{
+						"headline": "Kazakhstan Prizes Its Cowboys, but Few Want to Saddle Up for Harsh Life",
+						"blurb": "Kazakh cowboys, while proud of providing their rapidly modernizing nation with a link to its nomadic past, rarely want their children to follow them onto the frigid steppes.",
+						"url": "https://www.nytimes.com/2017/12/30/world/asia/kazakhstan-cowboys.html"
+					}
+				]
+			},
+			{
+				"_id": "54759eb3c090d83494e2d186",
+				"firstName": "Holly",
+				"lastName": "Zoba",
+				"email": "hollyzoba@gmail.com",
+				"company": "Hospitality Digital Marketing",
+				"linkedin": "https://www.linkedin.com/in/hollyzoba/",
+				"image": "https://pbs.twimg.com/profile_images/156228635/scouthollyfeb_400x400.jpg",
+				"title": "Vice President, Technology Resources",
+				"description": "Learn how to bring your guests and marketing efforts into balance. Use what digital tools you need, rather than what someone is selling. Create strategies that allow you down to a property level look good and feel connected to exactly the guests that want your location when they want it.",
+				"twitter": ["984854442473213952", "979456604075511808", "976691316384919552"],
+				"headlines": [
+					{
+						"headline": "News | Hospitality Digital Marketing",
+						"blurb": "I was a judge for the 2016 Social Media Awards in HOTELS Magazine's October Edition . For the complete article click HERE",
+						"url": "https://www.nytimes.com/2018/03/05/technology/personaltech/insurance-belongings.html"
+					},
+					{
+						"headline": "Digital marketing drives hospitality industry, but personal connections are still vital",
+						"blurb": "In the second installment of the “Back to the Future” series, Marty, the unsuspecting time traveler, is propelled to the (then) futuristic year of 2015, where he encounters such advanced technology as holographic billboards and advertisements. Now, a couple of years later, holograms aren’t a steady component of digital marketing. However, we may not be too far off the mark.",
+						"url": "https://azbigmedia.com/digital-marketing-hospitality-industry-hsmai/"
+					},
+					{
+						"headline": "Hotel Digital Marketing Benchmarks",
+						"blurb": "Access the power of benchmarking in your quest to understand the performance of your digital marketing, and your position within the industry. HSMAI’s Digital Marketing Benchmarks, a project of HSMAI’s Digital Marketing Council, will help you gauge your competitive position on a wide variety of topics that are top of mind for all hoteliers in today’s fast moving environment.",
+						"url": "https://www.hsmai.org/benchmarking"
+					}
+				]
+			},
+			{
+				"_id": "54759eb3c090d83494e2d355",
+				"firstName": "Eric",
+				"lastName": "Tenenbaum",
+				"email": "erictenenbaum10@gmail.com",
+				"company": "Coding With Kids",
+				"linkedin": "https://www.linkedin.com/in/eric-tenenbaum/",
+				"image": "https://pbs.twimg.com/profile_images/2346624771/jyzukobby3738wocxj1b_400x400.jpeg",
+				"title": "Computer Programming Instructor",
+				"description": "Coding with Kids teaches computer programming to elementary and middle school children. We offer after-school enrichment classes, classes in education centers, camps, and Kid's Code-a-thons. We offer multi-year curriculum that will take students from the beginnings of computer science to the master-ship of software development.",
+				"twitter": ["289114093636419584"],
+				"headlines": [
+					{
+						"headline": "Coding with Kids",
+						"blurb": "Looking for a new activity for the family? You may be impressed with your family's abilities if you start coding with the kids!",
+						"url": "https://motivislearning.com/insights/family-coding-night/"
+					},
+					{
+						"headline": "New After School Program: Coding With Kids!!",
+						"blurb": "Jump start your child’s STEAM education with Coding with Kids’ Little Coders class! Students will develop their computational thinking skills and build their own creative programs.",
+						"url": "http://zilkerelem.org/new-after-school-program-coding-with-kids/"
+					},
+					{
+						"headline": "Coding With Kids: Six Secrets to Teaching Children to Program",
+						"blurb": "Programming education has become a lot more mainstream in the past few decades, but much of the materials are still targeted at middle school and high school audiences. What if you've got younger children and you don't want to wait to teach them how to make software? Well, I say you don't have to!",
+						"url": "https://blog.newrelic.com/2016/12/23/programing-with-kids/"
+					}
+				]
+			}
+		],
+		"dateTime": "2018-04-24T20:00:00-07:00",
+		"summary": "Boot Camp Portfolio Show"
+	},	
+	{
+		"attendees": [
+			{
+				"_id": "54759eb3c090d83494e2d412",
+				"firstName": "Jason",
+				"lastName": "Summers",
+				"email": "jsummers@trilogyed.com",
+				"company": "University of Arizona",
+				"linkedin": "https://www.linkedin.com/in/jason-summers22/",
+				"title": "Student Success Manager",
+				"description": "The University of Arizona is the leading public research university in the American Southwest. The UA produces more than $600 million in annual research and is the state's only member of the prestigious Association of American Universities. This is a diverse community of people who thrive on innovation and collaboration. Our world-class faculty create discoveries that improve the human condition and fuel the state's economy. Our research enterprise provides undergraduate students with opportunities for hands-on experiences that can be found in few universities in the world. As the state's land-grant university, our research and resources enrich communities around the state and around the world.",
+				"twitter": [],
+				"headlines": [
+					{
+						"headline": "A High-Paying Job? Go to App Boot Camp.",
+						"blurb": "Some organizations are helping women and low-income minorities get into the software field.",
+						"url": "https://www.nytimes.com/2018/04/17/opinion/computer-science-boot-camp.html"
+					},
+					{
+						"headline": "Karlie Kloss Teaches Teenage Girls How to Code",
+						"blurb": "When she's not jet-setting or hanging with Taylor Swift, the 25-year-old model runs a coding boot camp for young women.",
+						"url": "https://www.nytimes.com/2018/03/16/style/karlie-kloss-kan-kode.html"
+					},
+					{
+						"headline": "Teenagers in The Times: March 2018",
+						"blurb": "Our roundup of the news stories and features about young people that have recently appeared across sections of NYTimes.com.",
+						"url": "https://www.nytimes.com/2018/04/05/learning/lesson-plans/teenagers-in-the-times-march-2018.html"
+					}
+				]
+			},
+			{
+				"_id": "54759eb3c090d83494e2d587",
+				"firstName": "Daniel",
+				"lastName": "Dito",
+				"email": "drdito8@gmail.com",
+				"company": "University of Arizona",
+				"linkedin": "https://www.linkedin.com/in/danieldito/",
+				"title": "Teaching Assistant",
+				"description": "The University of Arizona is the leading public research university in the American Southwest. The UA produces more than $600 million in annual research and is the state's only member of the prestigious Association of American Universities. This is a diverse community of people who thrive on innovation and collaboration. Our world-class faculty create discoveries that improve the human condition and fuel the state's economy. Our research enterprise provides undergraduate students with opportunities for hands-on experiences that can be found in few universities in the world. As the state's land-grant university, our research and resources enrich communities around the state and around the world.",
+				"twitter": [],
+				"headlines": [
+					{
+						"headline": "A High-Paying Job? Go to App Boot Camp.",
+						"blurb": "Some organizations are helping women and low-income minorities get into the software field.",
+						"url": "https://www.nytimes.com/2018/04/17/opinion/computer-science-boot-camp.html"
+					},
+					{
+						"headline": "Karlie Kloss Teaches Teenage Girls How to Code",
+						"blurb": "When she's not jet-setting or hanging with Taylor Swift, the 25-year-old model runs a coding boot camp for young women.",
+						"url": "https://www.nytimes.com/2018/03/16/style/karlie-kloss-kan-kode.html"
+					},
+					{
+						"headline": "Teenagers in The Times: March 2018",
+						"blurb": "Our roundup of the news stories and features about young people that have recently appeared across sections of NYTimes.com.",
+						"url": "https://www.nytimes.com/2018/04/05/learning/lesson-plans/teenagers-in-the-times-march-2018.html"
+					}
+				]
+			},
+			{
+				"_id": "54759eb3c090d83494e2d355",
+				"firstName": "Eric",
+				"lastName": "Tenenbaum",
+				"email": "erictenenbaum10@gmail.com",
+				"company": "Coding With Kids",
+				"linkedin": "https://www.linkedin.com/in/eric-tenenbaum/",
+				"image": "https://pbs.twimg.com/profile_images/2346624771/jyzukobby3738wocxj1b_400x400.jpeg",
+				"title": "Computer Programming Instructor",
+				"description": "Coding with Kids teaches computer programming to elementary and middle school children. We offer after-school enrichment classes, classes in education centers, camps, and Kid's Code-a-thons. We offer multi-year curriculum that will take students from the beginnings of computer science to the master-ship of software development.",
+				"twitter": ["289114093636419584"],
+				"headlines": [
+					{
+						"headline": "Coding with Kids",
+						"blurb": "Looking for a new activity for the family? You may be impressed with your family's abilities if you start coding with the kids!",
+						"url": "https://motivislearning.com/insights/family-coding-night/"
+					},
+					{
+						"headline": "New After School Program: Coding With Kids!!",
+						"blurb": "Jump start your child’s STEAM education with Coding with Kids’ Little Coders class! Students will develop their computational thinking skills and build their own creative programs.",
+						"url": "http://zilkerelem.org/new-after-school-program-coding-with-kids/"
+					},
+					{
+						"headline": "Coding With Kids: Six Secrets to Teaching Children to Program",
+						"blurb": "Programming education has become a lot more mainstream in the past few decades, but much of the materials are still targeted at middle school and high school audiences. What if you've got younger children and you don't want to wait to teach them how to make software? Well, I say you don't have to!",
+						"url": "https://blog.newrelic.com/2016/12/23/programing-with-kids/"
+					}
+				]
+			},
+			{
+				"_id": "54759eb3c090d83494e2d645",
+				"firstName": "JJ",
+				"lastName": "Brenner",
+				"email": "jjbrenner@trilogyed.com",
+				"company": "Trilogy Education Services",
+				"linkedin": "https://www.linkedin.com/in/jjbrenner/",
+				"image": "https://pbs.twimg.com/profile_images/1267217816/eightbit-48721450-0700-4c03-927a-56932f673f42_400x400.png",
+				"title": "Software Engineer",
+				"description": "Trilogy is a Workforce Accelerator that partners with the world's leading universities to help companies bridge the digital skills gap. We work with experienced instructors, innovative employers, and top institutions to power skills-based training programs that prepare today's workers for tomorrow's jobs.",
+				"twitter": ["988291737985601537", "963432351899381760", "957034551401881600"],
+				"headlines": [
+					{
+						"headline": "Where Non-Techies Can Get With the Programming",
+						"blurb": "Just about everybody these days wants computing skills. To get some coding under your belt, there are options aplenty online, in college and at boot camps.",
+						"url": "https://www.nytimes.com/2017/04/04/education/edlife/where-non-techies-computer-programming-coding.html"
+					},
+					{
+						"headline": "Columbia Engineering Launches First Web Development Bootcamp In Partnership With Trilogy Education Services",
+						"blurb": "Columbia Engineering announced today the launch of its first coding bootcamp in partnership with Trilogy Education Services. Geared toward adult learners and working professionals, this 24-week, part-time program will cover the front-end and back-end skills necessary to become a proficient full stack developer, including the basics of coding, algorithms and data structure as well as intensive training in JavaScript, Node.js, HTML, CSS, jQuery, and Java.",
+						"url": "https://www.prnewswire.com/news-releases/columbia-engineering-launches-first-web-development-bootcamp-in-partnership-with-trilogy-education-services-300619625.html"
+					},
+					{
+						"headline": "Trilogy Education Raises $30M to Give Universities a Bootcamp in Skills-Based Training",
+						"blurb": "Coding bootcamp providers may have found their niche by targeting needs that traditional four-year institutions do not always offer: short, skill-based learning programs. But education startup Trilogy Education Services is trying to knock the disruptors by helping universities set up their own bootcamp services.",
+						"url": "https://www.edsurge.com/news/2017-06-05-trilogy-education-raises-30m-to-give-universities-a-bootcamp-in-skills-based-training"
+					}
+				]
+			},
+			{
+				"_id": "54759eb3c090d83494e2d804",
+				"firstName": "Steve",
+				"lastName": "Marshall",
+				"email": "stevesonoa@gmail.com",
+				"company": "State Farm",
+				"linkedin": "https://www.linkedin.com/in/sonoa/",
+				"image": "https://pbs.twimg.com/profile_images/949319390868074498/ZKWEC-MT_400x400.jpg",
+				"title": "Complex Auto Claims Specialist",
+				"description": "At State Farm®, our mission is to help people manage the risks of everyday life, recover from the unexpected, and realize their dreams. We are passionate and driven to create possibilities, and we’re serious about being here to help life go right™ for customers by providing solutions for all of life’s moments.",
+				"twitter": ["949323672887615488", "949323621809319936", "949323544080482304"],
+				"headlines": [
+					{
+						"headline": "Taking Stock of Your Belongings for the Future",
+						"blurb": "Making a record of your possessions can prove useful for insurance purposes or planning a move, and you can find plenty of apps to help with the job.",
+						"url": "https://www.nytimes.com/2018/03/05/technology/personaltech/insurance-belongings.html"
+					},
+					{
+						"headline": "Why Driving Fewer Miles May Not Lead to Lower Auto Premiums",
+						"blurb": "People who don't drive much usually get in fewer accidents. But, a study finds, insurers typically emphasize a driver's marital status or credit score.",
+						"url": "https://www.nytimes.com/2018/03/02/your-money/driving-fewer-miles-may-not-lower-auto-premiums.html"
+					},
+					{
+						"headline": "Kazakhstan Prizes Its Cowboys, but Few Want to Saddle Up for Harsh Life",
+						"blurb": "Kazakh cowboys, while proud of providing their rapidly modernizing nation with a link to its nomadic past, rarely want their children to follow them onto the frigid steppes.",
+						"url": "https://www.nytimes.com/2017/12/30/world/asia/kazakhstan-cowboys.html"
+					}
+				]
+			},			
+			{
+				"_id": "54759eb3c090d83494e2d741",
+				"firstName": "Tucker",
+				"lastName": "Beauchamp",
+				"email": "tuckerbeauchamp@gmail.com",
+				"company": "Closing Compass",
+				"linkedin": "https://www.linkedin.com/in/tucker-beauchamp-25a330b5/",
+				"title": "Lead Software Engineer (React/Express)",
+				"description": "A software engineer with a background in mechanical engineering. I love the process of building things from scratch. I am experienced with Javascript from jQuery to Node. Currently studying Python, C#, and Java.",
+				"twitter": [],
+				"headlines": []
+			}
+		],
+		"dateTime": "2018-04-28T08:00:00-07:00",
+		"summary": "All TA Meeting"
+	}	
 ]
