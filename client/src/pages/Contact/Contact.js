@@ -20,7 +20,7 @@ class Contact extends React.Component {
 							<Col size="lg-12 md-12 sm-12 xs-12">
 								<h1>Contact Us</h1>
 								<p>We hope you are enjoying Arthur.  If you have questions, comments or recommendations about Arthur, please feel free to contact us.</p>
-								<p>Arthur Knows Info</p>
+								<h2>Arthur Knows Info</h2>
 								<p>PO Box 172</p>
 								<p>Chandler, AZ 85226</p>
 								<p>Phone: 614.638.2194</p>

@@ -59,7 +59,7 @@ class Settings extends React.Component {
 					</Row>
 					<Row>
 						<Col size="lg-12 md-12 sm-12 xs-12">
-							<p>Link to your Google Calendar</p>
+							<h3>Manage your Google Calendar settings</h3>
 							<Calendar location="settings"/>
 							<div className="hDivider center-block"></div>
 						</Col>

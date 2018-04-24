@@ -20,23 +20,24 @@ class Results extends React.Component {
 
 	constructor (props) {
 		super(props);
-		// this.props.updatePage('Results');
-		// setTimeout(this.props.updateArthurText, 500);
-	}
-
-	componentDidMount() {
-		console.log(this.props);
+		this.props.updatePage('Results');
+		setTimeout(this.props.updateArthurText, 500);
 	}
 
 	render () {
 		return (
 
-			<Panel>
+			<Panel>{console.log(this.props.personInfo)}
 				<Container fluid>
 					<Row>
 						<Col size="lg-12 md-12 sm-12 xs-12">
 							<Personal
-								
+								img={this.props.resultProfile.img}
+								name={linkedinData.name}
+								linkedin={linkedinData.linkedin}
+								title={linkedinData.title}
+								company={linkedinData.company}
+								description={this.props.resultProfile.description}
 							/>
 						</Col>
 					</Row>

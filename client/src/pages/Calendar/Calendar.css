@@ -11,20 +11,20 @@
 }
 
 .calButton {
-	background-image: url('/img/googleCalendarTransparent-sm.png');
-	width: 400px;
-    height: 100px;
-    background-repeat: no-repeat;
-    background-size: cover;
-       background-color: transparent;
-       border:0;
+	background-image: url('/img/googleCalendarGray.png');
+	width: 100%;
+  height: 138px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border:0;
 }
 .calSignOutButton {
-	background-image: url('/img/sign-out-button-sm.png');
-	width: 385px;
-    height: 100px;
-    background-repeat: no-repeat;
-    background-size: cover;
-       background-color: transparent;
-       border:0;
+	background-image: url('/img/googleCalendarRed.png');
+	width: 100%;
+  height: 138px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border:0;
 }

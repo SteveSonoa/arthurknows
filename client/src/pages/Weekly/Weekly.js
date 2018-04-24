@@ -22,7 +22,7 @@ class Weekly extends React.Component {
 
 			<div>
 				{meetingData.map(meetingData => (
-					<div key={meetingData.linkedin}>
+					<div key={meetingData.dateTime}>
 						<Panel>
 							<Container fluid>
 								<Row>
@@ -30,6 +30,7 @@ class Weekly extends React.Component {
 										<Meetings
 											meetingData={meetingData}
 											location={this.props.location}
+											updateNames={this.props.updateNames}
 										/>
 									</Col>
 								</Row>

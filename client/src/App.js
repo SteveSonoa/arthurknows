@@ -3,6 +3,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NoMatch from "./pages/NoMatch";
 import Arthur from "./pages/Arthur";
 import Results from "./pages/Results";
+import Results01 from "./pages/Results/Results01.js";
+import Results02 from "./pages/Results/Results02.js";
+import Results03 from "./pages/Results/Results03.js";
+import Results04 from "./pages/Results/Results04.js";
+import Results05 from "./pages/Results/Results05.js";
+import Results06 from "./pages/Results/Results06.js";
+import Results07 from "./pages/Results/Results07.js";
 import Login from "./pages/Login";
 import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
@@ -15,7 +22,7 @@ import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import { Col, Row, Container } from "./components/Grid";
 // import profileData from "./pages/Profile/profileData.json";
-// import SecretRoute from './pages/Settings';
+import SecretRoute from './pages/Settings';
 import CustomSearch from './pages/CustomSearch';
 
 class App extends Component {
@@ -24,12 +31,21 @@ class App extends Component {
 		page: "Login",
 		userDetails: {},
 		arthurText: "I'm ready to get to work.",
-		sarcasm: 2
+		sarcasm: 2,
+		firstName: "",
+		lastName: ""
 	};
 
 	updatePage = (pageName) => {
 		this.setState({page: pageName});
 	};
+
+	updateNames = (fName, lName) => {
+		this.setState({
+			firstName: fName,
+			lastName: lName
+		});
+	}
 
 	updateArthurText = () => {
 		// this.setState({arthurText: text});
@@ -122,10 +138,10 @@ class App extends Component {
 										<Settings profileData={this.state.userDetails} updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
 									} />
 									<Route exact path="/search/weekly" render = { () =>
-										<Weekly updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
+										<Weekly updatePage={this.updatePage} updateNames={this.updateNames} updateArthurText={this.updateArthurText} />
 									} />
 									<Route exact path="/search/daily" render = { () =>
-										<Daily updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
+										<Daily updatePage={this.updatePage} updateNames={this.updateNames} updateArthurText={this.updateArthurText} />
 									} />
 									{/* <Route exact path="/search/custom" render = { () =>
 										<CustomSearch updatePage={this.updatePage} />
@@ -135,12 +151,43 @@ class App extends Component {
 
 									{/*<Route exact path="/search/custom" component={CustomSearch} />*/}
 									<Route exact path="/search/custom" render = { () =>
-										<CustomSearch updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
+										<CustomSearch updatePage={this.updatePage} firstName={this.state.firstName} lastName={this.state.lastName} updateArthurText={this.updateArthurText} />
 									} />
 
+									
+
+									<Route exact path="/results/54759eb3c090d83494e2d804" render = { () => 
+										<Results01 updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
+									} />
+									
+									<Route exact path="/results/54759eb3c090d83494e2d186" render = { () => 
+										<Results02 updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
+									} />
+									
+									<Route exact path="/results/54759eb3c090d83494e2d355" render = { () => 
+										<Results03 updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
+									} />
+									
+									<Route exact path="/results/54759eb3c090d83494e2d412" render = { () => 
+										<Results04 updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
+									} />
+									
+									<Route exact path="/results/54759eb3c090d83494e2d587" render = { () => 
+										<Results05 updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
+									} />
+									
+									<Route exact path="/results/54759eb3c090d83494e2d645" render = { () => 
+										<Results06 updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
+									} />
+									
+									<Route exact path="/results/54759eb3c090d83494e2d741" render = { () => 
+										<Results07 updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
+									} />
+									
 									<Route path="/results/:personInfo" render = { () =>
 										<Results updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
-									} />
+									} component={Results} />
+
 									<Route exact path="/profile" render = { () =>
 										<Profile profileData={this.state.userDetails} updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
 									} />

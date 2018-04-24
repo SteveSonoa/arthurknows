@@ -145,10 +145,9 @@ class App extends React.Component {
           <Col size="lg-12 md-12 sm-12 xs-12">
           {/*this.props.login ? null : <Welcome/> */}
             
-            <div className="container">
+
               {this.state.showAuthButton ? authButton : null}
               {this.state.showSignOutButton ? signOutButton : null}
-            </div>
           </Col>
         </Row>
       </Container>
