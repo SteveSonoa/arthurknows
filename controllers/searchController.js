@@ -1,12 +1,36 @@
 const db = require("../models");
 const bing = require("../Bing");
 const LocalNews = require("../models/localNews.js");
+const TwitterHelperClass = require('../routes/twitter-helper')
+const nyTimesHelperClass = require('../routes/nyTimes-helper')
+
+function parseNYTArticles(data) {
+    var NYTData = data.response.docs;
+    var NYTArticles = [];
+
+    NYTData.forEach(function(article) {
+        var { pub_date, snippet, web_url, headline } = article;
+        var print_headline = headline.print_headline;
+        NYTArticles.push({
+            print_headline,
+            pub_date,
+            snippet,
+            web_url
+        })
+
+    })
+
+    return NYTArticles;
+
+}
 
 module.exports = {
   searchPerson: function(req, res) {
     console.log("@@@@@@@@@@", req.body);
 
     let company = emailHandler(req.body.company);
+    const twitterHandle = req.body.twitterHandle;
+
 
     db.PersonSearch.findOne({
       firstName: req.body.firstName,
@@ -14,21 +38,71 @@ module.exports = {
       company: company
     })
       .populate("localnews")
-      .then(dbResults => {
+      .then(async dbResults => {
+        const twitter = async () => new TwitterHelperClass(twitterHandle)
+          .then(resp => {
+            // console.log('in twitter helper response', resp)
+            return resp
+          })
         // console.log(dbResults)
         // let resultsArray = [];
+        const nyTimes = async () => new nyTimesHelperClass(Reflect.get(req.body, 'company'))
+          .then(resp => {
+            console.log('in nytimes', resp)
+            return parseNYTArticles(resp)
+          })
+        const bingResults = async () => {
+          if (!dbResults == true && typeof dbResults == "object") {
+            console.log("run the bing search and twitter!");
+          //  try {
+            const results = await bing.bingSearch.regularSearch(
+              req.body.firstName,
+              req.body.lastName,
+              company
+            );
+            console.log('we are in bing search', results);
+            // res.json(results)
+            return results
+            //}
+            //catch (err) {
+              //console.log('error when trying to search bing', err)
+              // res.status(422).json(err)
+            //}
+          } else {
+            // res.json(dbResults);
+            return dbResults
+          }
+        }
 
+        try {
+          const results = await Promise.all([twitter(), nyTimes()])
+          console.log('Results of twitter and bing', results);
+          res.json({twitter: results[0], bing: results[1]});
+        } catch (e) {
+          console.error(e)
+          res.status(422).json(e)
+        }
+        /*
         if (!dbResults == true && typeof dbResults == "object") {
-          console.log("run the bing search!");
-          bing.bingSearch.regularSearch(
-            req.body.firstName,
-            req.body.lastName,
-            company
-          );
-
-          res.json("User added to database");
+          console.log("run the bing search and twitter!");
+          try {
+            const results = await Promise.all([bing.bingSearch.regularSearch(
+              req.body.firstName,
+              req.body.lastName,
+              company
+            )]);
+            console.log('we are in bing search', results[0]);
+            res.json(results)
+          } catch (err) {
+            console.log('error when trying to search bing', err)
+            res.status(422).json(err)
+          }
         } else {
           res.json(dbResults);
+        */
+
+
+
           // resultsArray.push(dbResults);
           // bing.bingCustomSearch.customSearch(req.body.company)
 
@@ -39,7 +113,6 @@ module.exports = {
 
           //                     res.json(resultsArray);
           //                 })
-        }
       })
       .catch(err => res.status(422).json(err));
   }

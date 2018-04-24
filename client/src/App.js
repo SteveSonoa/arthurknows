@@ -24,7 +24,9 @@ class App extends Component {
 
 	state = {
 		page: "Login",
-		userDetails: {}
+		userDetails: {},
+		bingSearchResults: {},
+		twitterSearchResults: {}
 	};
 
 	updatePage = (pageName) => {
@@ -34,6 +36,16 @@ class App extends Component {
 	updateUserDetails = userDetails => {
 		console.log('updating user details', userDetails);
 		this.setState({userDetails});
+	}
+
+	updateSearchResults = ({twitter: twitterSearchResults, bing: bingSearchResults}) => {
+		console.log('updating search results');
+		this.setState(prevState => ({
+			...prevState,
+			bingSearchResults,
+			twitterSearchResults
+		}))
+		console.log('after updating search results', this.state);
 	}
 
 	render() {
@@ -63,15 +75,19 @@ class App extends Component {
 									<Route exact path="/search/daily" render = { () =>
 										<Daily updatePage={this.updatePage} />
 									} />
-									{/* <Route exact path="/search/custom" render = { () =>
-										<CustomSearch updatePage={this.updatePage} />
-									} /> */}
+									<Route exact path="/search/custom" render = { (props) =>
+										<CustomSearch
+											location={props.location}
+											history={props.history}
+											updateSearchResults={this.updateSearchResults}
+											updatePage={this.updatePage} />
+									} />
 
 									{/* Trying SOmething else for custom search: */}
 
-									<Route exact path="/search/custom" component={CustomSearch} />
+									{ /* <Route exact path="/search/custom" component={CustomSearch} /> */}
 									<Route path="/results/:personInfo" render = { () =>
-										<Results updatePage={this.updatePage} />
+										<Results twitterSearchResults={this.state.twitterSearchResults} bingSearchResults={this.state.bingSearchResults} updatePage={this.updatePage} />
 									} />
 									<Route exact path="/profile" render = { () =>
 										<Profile profileData={this.state.userDetails} updatePage={this.updatePage} />
