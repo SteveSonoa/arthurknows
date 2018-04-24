@@ -20,7 +20,18 @@ import API from "../../utils/API";
 class Results_URI extends React.Component {
 
 	state = {
-		data: {}
+		data: {
+			localnews: [],
+			_id: "",
+			firstName: "",
+			lastName: "",
+			company: "",
+			linkedInHeadline: "",
+			linkedInURL: "",
+			linkedInDescription: "",
+			companyDescription: "",
+			companyURL: ""
+		}
 	}
 
 	// constructor (props) {
