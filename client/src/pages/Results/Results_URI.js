@@ -51,14 +51,15 @@ class Results_URI extends React.Component {
 		// console.log(this.props.match.params.id);
 		API.getById(this.props.match.params.id)
 			.then( data => {
-				this.setState({data: data});
-				console.log(this.state);
+				this.setState({data: data.data});
+				console.log(this.state.data);
 			}
 		);
 	}
 
 	componentDidMount() {
-		console.log(this.state);
+		console.log("hello");
+
 	}
 
 	// deletedinfo() {
@@ -132,10 +133,10 @@ class Results_URI extends React.Component {
 								<Row>
 									<Col size="lg-12 md-12 sm-12 xs-12">
 										<h1>Company Headlines</h1>
-										{this.state.data.localnews.map(story => (
+										{this.state.data.localnews ? this.state.data.localnews.map(story => (
 											<a href={story.url} key={story.url}><h2>{story.name}</h2>
 											<p>{story.snippet}</p></a>
-										))}
+										)) : ""}
 									</Col>
 								</Row>
 							</Container>
