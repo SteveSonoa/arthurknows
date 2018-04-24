@@ -19,9 +19,9 @@ const Nav = () => (
         <li className="navTransition-hover"><Link to="/search/weekly"><i className="far fa-calendar-alt navMenuItem navi"></i>
           <p id="navTransition-hover-content" className="navp">This Week</p></Link>
         </li>
-        {/*<li className="navTransition-hover"><Link to="/search/custom"><i className="fas fa-users navMenuItem navi"></i>
+        <li className="navTransition-hover"><Link to="/search/custom"><i className="fas fa-users navMenuItem navi"></i>
           <p id="navTransition-hover-content" className="navp">Search</p></Link>
-        </li>*/}
+        </li>
         <li className="navTransition-hover"><Link to="/profile"><i className="fas fa-user navMenuItem navi"></i>
           <p id="navTransition-hover-content" className="navp">My Profile</p></Link>
         </li>
