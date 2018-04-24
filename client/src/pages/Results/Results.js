@@ -10,7 +10,7 @@ import linkedinData from "../../components/Results/data/linkedin.json";
 // import sharedData from "../../components/Results/data/shared.json";
 // import twitterData from "../../components/Results/data/twitter.json";
 import CalendarActivities from '../../utils/data';
-import { Timeline } from 'react-twitter-widgets'
+
 // PROPS INCLUDES THE FOLLOWING:
 	// resultHeadlines: [],
 	// resultTwitter: [],
@@ -28,10 +28,6 @@ class Results extends React.Component {
 		console.log(this.props);
 	}
 
-	componentWillMount() {
-		console.log('we are in results', this.props);
-	}
-
 	render () {
 		return (
 
@@ -39,14 +35,9 @@ class Results extends React.Component {
 				<Container fluid>
 					<Row>
 						<Col size="lg-12 md-12 sm-12 xs-12">
-
-						<Personal
-							img={Reflect.get(this.props.bingSearchResults, 'img')}
-							name={this.props.bingSearchResults.firstName + ' ' + this.props.bingSearchResults.lastName}
-							company={this.props.bingSearchResults.company}
-							description={Reflect.get(this.props.bingSearchResults, 'linkedInHeadline')}
-						/>
-
+							<Personal
+								
+							/>
 						</Col>
 					</Row>
 					<Row>
@@ -56,19 +47,15 @@ class Results extends React.Component {
 					</Row>
 					<Row>
 						<Col size="lg-5 md-5 sm-12 xs-12">
-						<div>
-							<img src={this.props.twitterSearchResults[0].user.profile_image_url_https} />
-							<p>{this.props.twitterSearchResults[0].user.description}</p>
-						</div>
-						<Twitter
-							header="Latest Tweets"
-							tweets={this.props.twitterSearchResults}
-						/>
+							<Twitter
+								header="Latest Tweets"
+								id={this.props.resultTwitter}
+							/>
 						</Col>
 						<Col size="lg-7 md-7 sm-12 xs-12">
-						<Headlines
-							stories={this.props.bingSearchResults}
-						/>
+							<Headlines
+								story={this.props.resultHeadlines}
+							/>
 						</Col>
 					</Row>
 				</Container>
@@ -78,18 +65,3 @@ class Results extends React.Component {
 };
 
 export default Results;
-
-/*
-<Personal
-	img={this.props.resultProfile.img}
-	name={linkedinData.name}
-	linkedin={linkedinData.linkedin}
-	title={linkedinData.title}
-	company={linkedinData.company}
-	description={this.props.resultProfile.description}
-/>
-
-<Headlines
-	story={this.props.resultHeadlines}
-/>
-*/
