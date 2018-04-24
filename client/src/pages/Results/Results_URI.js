@@ -121,7 +121,8 @@ class Results_URI extends React.Component {
 								<Row>
 									<Col size="lg-12 md-12 sm-12 xs-12">
 										<h1>Company Headlines</h1>
-										{this.state.data.localnews.map(story => (
+										{this.state.date.localnews && 
+											this.state.data.localnews.map(story => (
 											<a href={story.url} key={story.url}><h2>{story.name}</h2>
 											<p>{story.snippet}</p></a>
 										))}
