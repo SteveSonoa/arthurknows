@@ -31,10 +31,10 @@ class App extends Component {
 	state = {
 		page: "Login",
 		userDetails: {},
+		bingSearchResults: {},
+		twitterSearchResults: {},
 		arthurText: "I'm ready to get to work.",
-		sarcasm: 2,
-		firstName: "",
-		lastName: ""
+		sarcasm: 2
 	};
 
 	updatePage = (pageName) => {
@@ -117,6 +117,16 @@ class App extends Component {
 		this.setState({userDetails});
 	}
 
+	updateSearchResults = ({twitter: twitterSearchResults, bing: bingSearchResults}) => {
+		console.log('updating search results');
+		this.setState(prevState => ({
+			...prevState,
+			bingSearchResults,
+			twitterSearchResults
+		}))
+		console.log('after updating search results', this.state);
+	}
+
 	render() {
 		return (
 			<Router>
@@ -144,11 +154,20 @@ class App extends Component {
 									<Route exact path="/search/daily" render = { () =>
 										<Daily updatePage={this.updatePage} updateNames={this.updateNames} updateArthurText={this.updateArthurText} />
 									} />
-									{/* <Route exact path="/search/custom" render = { () =>
-										<CustomSearch updatePage={this.updatePage} />
-									} /> */}
+									<Route exact path="/search/custom" render = { (props) =>
+										<CustomSearch
+											location={props.location}
+											history={props.history}
+											updateSearchResults={this.updateSearchResults}
+											updatePage={this.updatePage} />
+									} />
 
 									{/* Trying SOmething else for custom search: */}
+
+
+									{ /* <Route exact path="/search/custom" component={CustomSearch} /> */}
+									<Route path="/results/:personInfo" render = { () =>
+										<Results twitterSearchResults={this.state.twitterSearchResults} bingSearchResults={this.state.bingSearchResults} updatePage={this.updatePage} />
 
 									{/*<Route exact path="/search/custom" component={CustomSearch} />*/}
 									<Route exact path="/search/custom" render = { () =>
@@ -159,6 +178,7 @@ class App extends Component {
 
 									<Route exact path="/results/54759eb3c090d83494e2d804" render = { () => 
 										<Results01 updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
+
 									} />
 									
 									<Route exact path="/results/54759eb3c090d83494e2d186" render = { () => 
@@ -185,7 +205,7 @@ class App extends Component {
 										<Results07 updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
 									} />
 									
-									<Route path="/results/:id" component={Results_URI} />
+									<Route path="/results/steveAndEric" component={Results_URI} />
 
 									<Route exact path="/profile" render = { () =>
 										<Profile profileData={this.state.userDetails} updatePage={this.updatePage} updateArthurText={this.updateArthurText} />

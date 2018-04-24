@@ -57,49 +57,31 @@ class Meetings extends React.Component {
 	render () {
 		return (
 			<div>
-				{/*<h1>{Moment(this.state.events[0].start.dateTime || this.state.events[0].start.date).format('MMMM Do YYYY')}</h1>
-				{this.state.events && this.state.events.map(( obj, index ) => (
-					<div key={index.toString()}>
-						<h2>{obj.summary}</h2>
-						<h3>{Moment(obj.start.dateTime || obj.start.date).format('h:mm a')}</h3>
-						<Container fluid>
-							{obj.attendees && obj.attendees.map((data, index) => (
-								<div key={`${index.toString()}-${data.displayName}`}>
-									<Row>
-										<Col size="lg-4 md-4 sm-4 xs-4">{data.displayName}</Col>
-										<Col size="lg-5 md-5 sm-5 xs-5">{data.email}</Col>
-										<Col size="lg-3 md-3 sm-3 xs-3"><Link to="/search/custom/" >Research Me</Link></Col>
-									</Row>
-								</div>
 
-							// <li key={`${index.toString()}-${data.displayName}`}> {data.displayName} {data.email} </li>
-							// <li key={`${index.toString()}-${data.displayName}`}> {data.displayName} {data.email} </li>
-							// <li key={`${index.toString()}`}>(<button> Research Me</button>)</li>
-							))}
-						</Container>
-					</div>
-				))}*/}
-				{console.log(this.props.meetingData)}
-				<h1>{Moment(this.props.meetingData.dateTime).format('MMMM Do YYYY')}</h1>
+				<li>
+					{this.state.events && this.state.events.map(( obj, index ) => (
+						<div key={index.toString()}>
+							<h4> Meeting Name: {obj.summary}</h4>
+							<ul>
 
-						<h2>{this.props.meetingData.summary}</h2>
-						<h3>{Moment(this.props.meetingData.dateTime).format('h:mm a')}</h3>
-						<Container fluid>
-							{this.props.meetingData.attendees && this.props.meetingData.attendees.map((data, index) => (
-								<div key={`${index.toString()}-${data._id}`}>
-									<Row>
-										<Col size="lg-4 md-4 sm-4 xs-4">{data.firstName} {data.lastName}</Col>
-										<Col size="lg-5 md-5 sm-5 xs-5">{data.email}</Col>
-										<Col size="lg-3 md-3 sm-3 xs-3"><Link to={"/results/" + data._id} >Research Me</Link></Col>
-									</Row>
-								</div>
+								<li>{Moment(obj.start.dateTime || obj.start.date).format('MMMM Do YYYY, h:mm:ss a')}</li>
+									{obj.attendees && obj.attendees.map((data, index) => (
+										<div key={`${index.toString()}-${data.displayName}`}>
+												<li> {data.displayName} {data.email} </li>
+												<li><Link to={`/search/custom?name=${data.displayName}`}
+													state={{personInfo: {displayName: data.displayName, email: data.email}}}
+													params={{personInfo: {displayName: data.displayName, email: data.email}}}
+													> Research Me</Link></li>
+										</div>
+									// <li key={`${index.toString()}-${data.displayName}`}> {data.displayName} {data.email} </li>
+									// 	<li key={`${index.toString()}-${data.displayName}`}> {data.displayName} {data.email} </li>
+										// <li key={`${index.toString()}`}>(<button> Research Me</button>)</li>
+								))}
+							</ul>
 
-							// <li key={`${index.toString()}-${data.displayName}`}> {data.displayName} {data.email} </li>
-							// <li key={`${index.toString()}-${data.displayName}`}> {data.displayName} {data.email} </li>
-							// <li key={`${index.toString()}`}>(<button> Research Me</button>)</li>
-							))}
-						</Container>
-
+						</div>
+					))}
+				</li>
 
 			</div>
 		)

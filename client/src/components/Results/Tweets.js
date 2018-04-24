@@ -7,11 +7,19 @@ export const Twitter = props => (
 		<Container fluid>
 			<Row>
 				<Col size="lg-12 md-12 sm-12 xs-12">
-					{ props.id.map(tweet => (
-						<Tweet tweetId={tweet.id} key={tweet.id} />
-					))}
+					{
+						props.tweets.map(tweet => (
+							<Tweet tweetId={tweet.id_str} />
+						))
+					}
 				</Col>
 			</Row>
 		</Container>
 	</div>
 );
+
+/*
+// { props.id.map(tweet => (
+// 	<Tweet tweetId={tweet.id} key={tweet.id} />
+// ))}
+*/
