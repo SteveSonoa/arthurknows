@@ -5,7 +5,6 @@ const CustomSearchForm = props =>(
     <div className="form-group">
       <label htmlFor="firstName">First Name:</label>
       <input
-        autocomplete="off"
         onChange={props.handleInputChange}
         value={props.value.firstName}
         name="firstName"
@@ -18,7 +17,6 @@ const CustomSearchForm = props =>(
     <div className="form-group">
        <label htmlFor="lastName">Last Name:</label>
       <input
-        autocomplete="off"
         onChange={props.handleInputChange}
         value={props.value.lastName}
         name="lastName"
@@ -31,7 +29,6 @@ const CustomSearchForm = props =>(
     <div className="form-group">      
        <label htmlFor="company">Company:</label>
       <input
-        autocomplete="off"
         onChange={props.handleInputChange}
         value={props.value.company}
         name="company"
@@ -44,7 +41,6 @@ const CustomSearchForm = props =>(
     <div className="form-group">      
        <label htmlFor="twitterHandle">Twitter Handle:</label>
       <input
-        autocomplete="off"
         onChange={props.handleInputChange}
         value={props.value.twitterHandle}
         name="twitterHandle"
@@ -62,5 +58,5 @@ const CustomSearchForm = props =>(
   </form>
 
 );
-
+  
   export default CustomSearchForm;
