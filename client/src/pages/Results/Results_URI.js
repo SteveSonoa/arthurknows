@@ -52,6 +52,7 @@ class Results_URI extends React.Component {
 		API.getById(this.props.match.params.id)
 			.then( data => {
 				this.setState({data: data});
+				console.log(this.state);
 			}
 		);
 	}
