@@ -39,7 +39,7 @@ const CustomSearchForm = props =>(
       />
     </div>
     <div className="form-group">      
-       <label htmlFor="Twitter Handle">Twitter Handle:</label>
+       <label htmlFor="twitterHandle">Twitter Handle:</label>
       <input
         onChange={props.handleInputChange}
         value={props.value.twitterHandle}
