@@ -40,7 +40,8 @@ class Results_URI extends React.Component {
 	// 	setTimeout(this.props.updateArthurText, 500);
 	// }
 
-	constructor () {
+	constructor (props) {
+		super(props)
 		// console.log(this.props.match.params.id);
 		API.getById(this.props.match.params.id)
 			.then( data => {
