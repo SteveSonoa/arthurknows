@@ -19,6 +19,10 @@ import API from "../../utils/API";
 
 class Results_URI extends React.Component {
 
+	state = {
+		data: {}
+	}
+
 	// constructor (props) {
 	// 	super(props);
 	// 	this.props.updatePage('Results');
@@ -26,7 +30,12 @@ class Results_URI extends React.Component {
 	// }
 
 	componentDidMount() {
-		console.log(this.props.match.params.id);
+		// console.log(this.props.match.params.id);
+		API.getById(this.props.match.params.id)
+			.then( data => {
+				this.setState({data: data});
+			}
+		);
 	}
 
 	// deletedinfo() {
@@ -68,7 +77,48 @@ class Results_URI extends React.Component {
 		return (
 
 			<Panel>
+				<Container fluid>
+					<Row>
+						<Col size="lg-12 md-12 sm-12 xs-12">
+							<Container fluid>
+								<Row>
+									<Col size="lg-12 md-12 sm-12 xs-12">
+										<h1>{this.state.data.firstName} {this.state.data.lastName}</h1>
+										<a href={this.state.data.linkedInURL}>{this.state.data.linkedInURL}</a>
+										<p>{this.state.data.linkedInHeadline}</p>
+										<p>{this.state.data.company}</p>
+									</Col>
+								</Row>
+								<Row>
+									<Col size="lg-12 md-12 sm-12 xs-12">
+										<p>{this.state.data.companyDescription}</p>
+									</Col>
+								</Row>
 
+							</Container>
+						</Col>
+					</Row>
+					<Row>
+						<Col size="lg-12 md-12 sm-12 xs-12">
+							<div className="hDivider center-block"></div>
+						</Col>
+					</Row>
+					<Row>
+						<Col size="lg-12 md-12 sm-12 xs-12">
+							<Container fluid>
+								<Row>
+									<Col size="lg-12 md-12 sm-12 xs-12">
+										<h1>Company Headlines</h1>
+										{this.state.data.localnews.map(story => (
+											<a href={story.url} key={story.url}><h2>{story.name}</h2>
+											<p>{story.snippet}</p></a>
+										))}
+									</Col>
+								</Row>
+							</Container>
+						</Col>
+					</Row>
+				</Container>
 			</Panel>
 		);
 	}
