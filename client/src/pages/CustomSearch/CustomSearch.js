@@ -2,6 +2,7 @@ import React from 'react';
 import Panel from "../../components/Panel";
 import { Col, Row, Container } from "../../components/Grid";
 import CustomSearchForm from "../CustomSearchForm";
+import {Route, Redirect } from 'react-router';
 // import { Link, withRouter} from "react-router-dom"; 
 import API from "../../utils/API";
 
@@ -39,6 +40,8 @@ class CustomSearch extends React.Component {
         console.log(formData.company);
         API.postBing(formData).then(data =>{
           console.log(data);
+          console.log(data.data._id);
+          this.setState({_id: data.data._id});
         })
    }
   
@@ -67,7 +70,10 @@ class CustomSearch extends React.Component {
   
     render() {
       return (
+
         <Container fluid>
+        { this.state._id ? <Redirect to={"/results/" + this.state._id} /> :
+
           <Row>
             <Col size="md-12">
               <Panel heading="Search">
@@ -80,6 +86,7 @@ class CustomSearch extends React.Component {
               </Panel>
             </Col>
           </Row>
+        }
         </Container>        
       );
     }
