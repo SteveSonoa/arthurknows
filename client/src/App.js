@@ -10,6 +10,7 @@ import Results04 from "./pages/Results/Results04.js";
 import Results05 from "./pages/Results/Results05.js";
 import Results06 from "./pages/Results/Results06.js";
 import Results07 from "./pages/Results/Results07.js";
+import Results_URI from "./pages/Results/Results_URI.js";
 import Login from "./pages/Login";
 import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
@@ -184,9 +185,7 @@ class App extends Component {
 										<Results07 updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
 									} />
 									
-									<Route path="/results/:personInfo" render = { () =>
-										<Results updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
-									} component={Results} />
+									<Route path="/results/:id" component={Results_URI} />
 
 									<Route exact path="/profile" render = { () =>
 										<Profile profileData={this.state.userDetails} updatePage={this.updatePage} updateArthurText={this.updateArthurText} />
