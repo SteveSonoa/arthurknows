@@ -42,6 +42,13 @@ module.exports = {
         }
       })
       .catch(err => res.status(422).json(err));
+  },
+  searchById: function(req, res){
+    console.log("$$$$", req.params);
+
+    db.PersonSearch.findById(req.params.id).populate("localnews").then(dbIdResults =>{
+      res.json(dbIdResults);
+    });
   }
 };
 

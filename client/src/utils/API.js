@@ -5,6 +5,9 @@ export default {
   postBing: function(searchData) {
     return axios.post("/api/search", searchData);
   },
+  getById: function(id){
+    return axios.get("/api/search/" + id);
+  },
   // Gets the book with the given id
   getBook: function(id) {
     return axios.get("/api/books/" + id);
