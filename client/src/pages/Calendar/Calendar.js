@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import "./Calendar.css";
 import { Col, Row, Container } from "../../components/Grid";
 import CalenderActivities from '../../utils/data';
@@ -8,9 +8,9 @@ import CalenderActivities from '../../utils/data';
 moment().format();
 
 
-  const Welcome = () => (<div> 
-  <h1 className="text-center loginTitle">Welcome To</h1> <h1 className="text-center loginTitle">A R T H U R</h1>
-            </div> )
+  // const Welcome = () => (<div> 
+  // <h1 className="text-center loginTitle">Welcome To</h1> <h1 className="text-center loginTitle">A R T H U R</h1>
+  //           </div> )
             
 
 class App extends React.Component {
@@ -80,7 +80,7 @@ class App extends React.Component {
   getEvents = () =>{
     let weekAhead =  moment().add(7, 'days')
     
-    let that = this;
+//    let that = this;
     function start() {
       window.gapi.client.init({
         'apiKey': 'AIzaSyAapMpWrO2ixD19IKraHoulluHMNkIWyLo',
@@ -145,10 +145,9 @@ class App extends React.Component {
           <Col size="lg-12 md-12 sm-12 xs-12">
           {/*this.props.login ? null : <Welcome/> */}
             
-            <div className="container">
+
               {this.state.showAuthButton ? authButton : null}
               {this.state.showSignOutButton ? signOutButton : null}
-            </div>
           </Col>
         </Row>
       </Container>

@@ -18,6 +18,11 @@ router.route("/")
     .post(searchController.searchPerson);
 
 
+router
+    .route("/:id")
+    .get(searchController.searchById);
+
+
 
 // Example:
 // Matches with "/api/books/:id"

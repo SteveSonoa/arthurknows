@@ -4,34 +4,13 @@ import { Link, withRouter} from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import CalendarActivities from '../../utils/data';
 import Moment from "moment";
-// const Meetings = props => (
-// 	<div key={props.meetingData.meetings[0].participants[0].email} >
-
-// 		<h1>{props.meetingData.date}</h1>
-
-// 		{props.meetingData.meetings.map(meetings => (
-// 			<div key={meetings.participants[0].email} >
-// 				<h2>{meetings.title}</h2>
-// 				<Row>
-// 					{meetings.participants.map(participants => (
-// 						<Col size="xs-3 sm-3 md-3 lg-3" key={participants.email}>
-// 							<Link to="/results">{participants.name}</Link>
-// 						</Col>
-// 					))}
-// 				</Row>
-// 			</div>
-// 		))}
-// 	</div>
-// );
-
-// export default Meetings;
 
 class Meetings extends React.Component {
 
-
-
 	state = {
-		events: []
+		events: [],
+		firstName: "",
+		lastName: ""
 	}
 
 	constructor (props) {
@@ -39,10 +18,11 @@ class Meetings extends React.Component {
 		this.state = {
 			events: this.checkActivity(this.props.location.pathname)
 		}
-		console.log(this.checkActivity(this.props.location.pathname))
+		console.log(this.checkActivity(this.props.location.pathname));
 	}
 
 	componentDidMount() {
+		console.log(this.props);
 	}
 
 	checkActivity = (args) => {
@@ -61,9 +41,23 @@ class Meetings extends React.Component {
 		}
 	}
 
+	// updateAppNames(name) {
+ //      let fullNameA = name.split(" ");
+ //      let lName = fullNameA.pop();
+ //      let fName = fullNameA.join(" ");
+ //      let separatedNames = {
+ //        firstName: fName,
+ //        lastName: lName
+ //      };
+ //      console.log(separatedNames);
+ //      this.props.updateNames(separatedNames.firstName, separatedNames.lastName);
+	// }
+
+
 	render () {
 		return (
 			<div>
+
 				<li>
 					{this.state.events && this.state.events.map(( obj, index ) => (
 						<div key={index.toString()}>
@@ -88,6 +82,7 @@ class Meetings extends React.Component {
 						</div>
 					))}
 				</li>
+
 			</div>
 		)
 	}

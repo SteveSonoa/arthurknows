@@ -1,14 +1,14 @@
 import React from "react";
 import Panel from "../../components/Panel";
 import { Col, Row, Container } from "../../components/Grid";
-import { Personal, Headlines, Posts, Shared, Twitter } from "../../components/Results";
+import { Personal, Headlines, Twitter } from "../../components/Results";
 import "./Results.css";
-import headlinesData from "../../components/Results/data/headlines.json";
+// import headlinesData from "../../components/Results/data/headlines.json";
 import linkedinData from "../../components/Results/data/linkedin.json";
-import postsCompanyData from "../../components/Results/data/postsCompany.json";
-import postsPersonData from "../../components/Results/data/postsPerson.json";
-import sharedData from "../../components/Results/data/shared.json";
-import twitterData from "../../components/Results/data/twitter.json";
+// import postsCompanyData from "../../components/Results/data/postsCompany.json";
+// import postsPersonData from "../../components/Results/data/postsPerson.json";
+// import sharedData from "../../components/Results/data/shared.json";
+// import twitterData from "../../components/Results/data/twitter.json";
 import CalendarActivities from '../../utils/data';
 import { Timeline } from 'react-twitter-widgets'
 // PROPS INCLUDES THE FOLLOWING:
@@ -17,9 +17,15 @@ import { Timeline } from 'react-twitter-widgets'
 	// resultProfile: {}
 
 class Results extends React.Component {
+
 	constructor (props) {
 		super(props);
-		this.props.updatePage('Results');
+		// this.props.updatePage('Results');
+		// setTimeout(this.props.updateArthurText, 500);
+	}
+
+	componentDidMount() {
+		console.log(this.props);
 	}
 
 	componentWillMount() {
@@ -29,16 +35,18 @@ class Results extends React.Component {
 	render () {
 		return (
 
-			<Panel>{console.log(this.props.personInfo)}
+			<Panel>
 				<Container fluid>
 					<Row>
 						<Col size="lg-12 md-12 sm-12 xs-12">
+
 						<Personal
 							img={Reflect.get(this.props.bingSearchResults, 'img')}
 							name={this.props.bingSearchResults.firstName + ' ' + this.props.bingSearchResults.lastName}
 							company={this.props.bingSearchResults.company}
 							description={Reflect.get(this.props.bingSearchResults, 'linkedInHeadline')}
 						/>
+
 						</Col>
 					</Row>
 					<Row>

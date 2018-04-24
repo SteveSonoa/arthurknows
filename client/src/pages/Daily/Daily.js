@@ -9,14 +9,14 @@ class Daily extends React.Component {
 	constructor (props) {
 		super(props);
 		this.props.updatePage('Daily');
+		setTimeout(this.props.updateArthurText, 500);
 	}
 
 	render () {
 		return (
-
 			<div>
 				{meetingData.map(meetingData => (
-					<div key={meetingData.linkedin}>
+					<div key={meetingData.dateTime}>
 						<Panel>
 							<Container fluid>
 								<Row>
@@ -24,6 +24,7 @@ class Daily extends React.Component {
 										<Meetings
 											meetingData={meetingData}
 											location={this.props.location}
+											updateNames={this.props.updateNames}
 										/>
 									</Col>
 								</Row>

@@ -1,12 +1,13 @@
 import React from "react";
 import Panel from "../../components/Panel";
-import { Col, Row, Container } from "../../components/Grid";
+// import { Col, Row, Container } from "../../components/Grid";
 import "./Privacy.css";
 
 class Privacy extends React.Component {
 	constructor (props) {
 		super(props);
 		this.props.updatePage('Privacy');
+		setTimeout(this.props.updateArthurText, 500);
 	}
 
 	render () {

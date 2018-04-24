@@ -38,6 +38,7 @@ module.exports = {
       company: company
     })
       .populate("localnews")
+
       .then(async dbResults => {
         const twitter = async () => new TwitterHelperClass(twitterHandle)
           .then(resp => {
@@ -45,6 +46,7 @@ module.exports = {
             return resp
           })
         // console.log(dbResults)
+
         // let resultsArray = [];
         const nyTimes = async () => new nyTimesHelperClass(Reflect.get(req.body, 'company'))
           .then(resp => {
@@ -115,6 +117,13 @@ module.exports = {
           //                 })
       })
       .catch(err => res.status(422).json(err));
+  },
+  searchById: function(req, res){
+    console.log("$$$$", req.params);
+
+    db.PersonSearch.findById(req.params.id).populate("localnews").then(dbIdResults =>{
+      res.json(dbIdResults);
+    });
   }
 };
 

@@ -4,20 +4,20 @@
 		"name": "Steve Marshall",
 		"linkedin": "https://www.linkedin.com/in/sonoa/",
 		"title": "React, UI/UX, Client-side Data, Graphic Design, CSS",
-		"description": "Steve likes coding. He's pretty awesome."
+		"description": "Steve has been developing web applications since the mid-1990's. His previous projects include trivia games, a poker league's real-time stat-tracking app, and an online scoreboard for R/C Combat Airplanes. Steve has helped several local clients with their website needs, including small businesses and local churches. Today, Steve is experienced with React, Node, Express, MongoDB, and MySQL for building full stack web applications. His Bachelor's Degree in Digital Art & Design is apparent in his front-end designs, and his 10+ years in marketing an live customer demos make him a confident and capable public speaker in public corporate settings. Steve graduated from the University Of Arizona's Coding Boot Camp with a 4.0 GPA."
 	},
 	{
 		"img": "./img/eric.jpg",
 		"name": "Eric Tenenbaum",
 		"linkedin": "https://www.linkedin.com/in/eric-tenenbaum/",
 		"title": "Express, Search Logic, Web Scraping, Server Data",
-		"description": "Eric likes coding. He's pretty awesome."
+		"description": "Eric recently moved to Gilbert, Arizona in late 2017. He grew up in Southern California and graduated with a Business Degree from Concordia University, Irvine. His first job out of college was a technical recruiting position in which he placed Microsoft .NET Developers in the Orange County market. From there, Eric relocated within the company to Los Angeles and placed Front-End, JavaScript, PHP, Python, and Ruby Engineers. Now he is excited to be on the other side of the fence, building interesting applications and games, & working with cutting edge technologies like Node.js. Eric is a quick study on new technologies, and he is always eager to learn new techniques. Aside from coding, Eric enjoys spending time with his girlfriend and puppy, as well as playing and watching sports."
 	},
 	{
 		"img": "./img/holly.jpg",
 		"name": "Holly Zoba",
 		"linkedin": "https://www.linkedin.com/in/hollyzoba/",
 		"title": "MongoDB, External API Management, oAuth Specialist",
-		"description": "Holly likes coding. She's pretty awesome, too."
+		"description": "Holly is a full stack developer with an extensive background in hotel sales and marketing. She is an accomplished leader known for training, developing, and coaching talent, as well as maintaining strong customer relationships, sourcing new business, and determining best-fit solutions for clients to increase bottom line. Holly expertly evaluates sales and marketing environments, then offers new and unique solutions to meet client needs. She is an innovative thinker interested in working with a hospitality technology group to help our industry grow in the digital space. Holly's technical skills include HTML5, CSS, JavaScript, jQuery, Bootstrap, Firebase, Node.js, MySQL, MongoDB, Express, Handlebars, Github, Wordpress, and React.js."
 	}
 ]
